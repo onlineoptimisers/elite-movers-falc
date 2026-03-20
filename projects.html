@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Elite Movers & Packing Services</title>
+  <meta name="description" content="Browse completed projects by Elite Movers — estate relocations, piano moves, museum transports, and specialty handling across Ventura, Santa Barbara, and Los Angeles." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --dark: #111111;
+      --dark2: #1a1a1a;
+      --dark3: #222222;
+      --mid: #333333;
+      --grey: #888888;
+      --light-grey: #cccccc;
+      --silver: #b8bec7;
+      --silver-light: #d4d8de;
+      --white: #f8f8f8;
+      --pure-white: #ffffff;
+      --accent: #b8bec7;
+      --font-sans: 'Inter', sans-serif;
+      --font-serif: 'Playfair Display', serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ─── TOPBAR ─── */
+    .topbar {
+      background: var(--dark2);
+      border-bottom: 1px solid var(--dark3);
+      padding: 9px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--silver);
+      letter-spacing: 0.03em;
+    }
+    .topbar a { color: var(--silver); transition: color 0.2s; }
+    .topbar a:hover { color: var(--white); }
+    .topbar-left { display: flex; gap: 28px; align-items: center; }
+    .topbar-right { display: flex; gap: 24px; align-items: center; }
+    .topbar-sep { color: var(--mid); }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,10,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--dark3);
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 68px;
+    }
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--white);
+      letter-spacing: 0.02em;
+    }
+    .nav-logo span { color: var(--silver); }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      list-style: none;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .nav-links a {
+      color: var(--light-grey);
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--silver);
+      transition: width 0.3s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta {
+      background: var(--white);
+      color: var(--black) !important;
+      padding: 10px 22px;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: background 0.2s, color 0.2s !important;
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--silver) !important; color: var(--black) !important; }
+
+    /* ─── MAIN LAYOUT ─── */
+    .projects-layout {
+      display: grid;
+      grid-template-columns: 60% 40%;
+      height: calc(100vh - 68px - 37px);
+    }
+
+    /* ─── MAP PANEL ─── */
+    .map-panel {
+      position: relative;
+      background: var(--dark);
+      border-right: 1px solid var(--dark3);
+      overflow: hidden;
+    }
+    .map-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 45% 50%, rgba(30,40,55,0.5) 0%, transparent 70%),
+        linear-gradient(135deg, var(--dark) 0%, #0d1117 50%, #111820 100%);
+    }
+
+    /* Stylized coastline */
+    .map-coast {
+      position: absolute;
+      inset: 0;
+    }
+    .map-coast svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Map pin */
+    .map-pin {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--silver);
+      border: 2px solid var(--pure-white);
+      box-shadow: 0 0 12px rgba(184,190,199,0.4), 0 0 30px rgba(184,190,199,0.15);
+      z-index: 10;
+      cursor: pointer;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .map-pin:hover {
+      transform: scale(1.3);
+      box-shadow: 0 0 18px rgba(184,190,199,0.6), 0 0 40px rgba(184,190,199,0.25);
+    }
+    .map-pin.active {
+      background: var(--pure-white);
+      box-shadow: 0 0 20px rgba(255,255,255,0.5), 0 0 50px rgba(184,190,199,0.3);
+      transform: scale(1.4);
+    }
+    .map-pin-pulse {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(184,190,199,0.3);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: pulse 2.5s ease-out infinite;
+    }
+    @keyframes pulse {
+      0% { transform: translate(-50%, -50%) scale(0.8); opacity: 1; }
+      100% { transform: translate(-50%, -50%) scale(2.2); opacity: 0; }
+    }
+
+    /* Map labels */
+    .map-label {
+      position: absolute;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(184,190,199,0.35);
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    /* Map header overlay */
+    .map-header {
+      position: absolute;
+      top: 40px;
+      left: 40px;
+      z-index: 20;
+    }
+    .map-header h1 {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      font-weight: 500;
+      color: var(--pure-white);
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .map-header p {
+      font-size: 13px;
+      color: var(--grey);
+      font-weight: 300;
+      max-width: 320px;
+      line-height: 1.6;
+    }
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--silver);
+    }
+
+    /* Map stats */
+    .map-stats {
+      position: absolute;
+      bottom: 40px;
+      left: 40px;
+      z-index: 20;
+      display: flex;
+      gap: 36px;
+    }
+    .map-stat {
+      border-left: 2px solid var(--silver);
+      padding-left: 14px;
+    }
+    .map-stat-num {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      color: var(--pure-white);
+      line-height: 1;
+    }
+    .map-stat-label {
+      font-size: 10px;
+      color: var(--grey);
+      letter-spacing: 0.06em;
+      margin-top: 4px;
+      text-transform: uppercase;
+    }
+
+    /* ─── PROJECTS PANEL ─── */
+    .projects-panel {
+      overflow-y: auto;
+      background: var(--black);
+      scrollbar-width: thin;
+      scrollbar-color: var(--dark3) var(--black);
+    }
+    .projects-panel::-webkit-scrollbar { width: 6px; }
+    .projects-panel::-webkit-scrollbar-track { background: var(--black); }
+    .projects-panel::-webkit-scrollbar-thumb { background: var(--dark3); border-radius: 3px; }
+
+    .projects-header {
+      padding: 28px 28px 20px;
+      border-bottom: 1px solid var(--dark3);
+      position: sticky;
+      top: 0;
+      background: rgba(10,10,10,0.96);
+      backdrop-filter: blur(8px);
+      z-index: 10;
+    }
+    .projects-header h2 {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--pure-white);
+      margin-bottom: 4px;
+    }
+    .projects-header p {
+      font-size: 12px;
+      color: var(--grey);
+    }
+    .projects-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--dark3);
+      color: var(--silver);
+      font-size: 11px;
+      font-weight: 700;
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    /* ─── PROJECT CARD ─── */
+    .project-card {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 16px;
+      padding: 20px 28px;
+      border-bottom: 1px solid var(--dark3);
+      transition: background 0.25s;
+      cursor: pointer;
+      position: relative;
+    }
+    .project-card:hover { background: var(--dark2); }
+    .project-card.active {
+      background: var(--dark2);
+      border-left: 3px solid var(--silver);
+      padding-left: 25px;
+    }
+    .project-thumb {
+      width: 120px;
+      height: 88px;
+      overflow: hidden;
+      border: 1px solid var(--dark3);
+      flex-shrink: 0;
+    }
+    .project-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+      transition: opacity 0.3s, transform 0.4s;
+    }
+    .project-card:hover .project-thumb img {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    .project-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .project-type {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 4px;
+    }
+    .project-title {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--pure-white);
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+    .project-location {
+      font-size: 12px;
+      color: var(--grey);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 6px;
+    }
+    .project-desc {
+      font-size: 12px;
+      color: var(--grey);
+      line-height: 1.5;
+    }
+
+    /* ─── CTA at bottom of projects ─── */
+    .projects-cta {
+      padding: 32px 28px;
+      text-align: center;
+      background: var(--dark2);
+    }
+    .projects-cta p {
+      font-size: 14px;
+      color: var(--light-grey);
+      margin-bottom: 16px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--pure-white);
+      color: var(--black);
+      padding: 14px 28px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: all 0.25s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--silver-light); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+
+    @media (max-width: 1100px) {
+      body { overflow: auto; height: auto; }
+      .projects-layout {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+      .map-panel {
+        height: 50vh;
+        min-height: 400px;
+      }
+      .projects-panel { height: auto; }
+      .topbar { display: none; }
+      .projects-layout { height: calc(100vh - 68px); }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .map-panel { height: 40vh; min-height: 300px; }
+      .map-header { top: 24px; left: 24px; }
+      .map-header h1 { font-size: 24px; }
+      .map-stats { bottom: 24px; left: 24px; gap: 24px; }
+      .map-stat-num { font-size: 20px; }
+      .project-card { grid-template-columns: 90px 1fr; gap: 12px; padding: 16px 20px; }
+      .project-thumb { width: 90px; height: 68px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <span>Serving Ventura, Santa Barbara & Greater Los Angeles</span>
+    </div>
+    <div class="topbar-right">
+      <a href="tel:+18056976220">Call (805) 697-6220</a>
+      <span class="topbar-sep">|</span>
+      <a href="mailto:elitemoversca@gmail.com">elitemoversca@gmail.com</a>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Elite <span>Movers</span></a>
+    <ul class="nav-links">
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About Elite</a></li>
+      <li><a href="project-pages.html">Previous Work</a></li>
+      <li><a href="locations.html">Locations</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="tel:+18056976220" class="nav-cta">Call Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN LAYOUT -->
+  <div class="projects-layout">
+
+    <!-- MAP PANEL -->
+    <div class="map-panel">
+      <div class="map-bg"></div>
+
+      <!-- Stylized coastline SVG -->
+      <div class="map-coast">
+        <svg viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <!-- Ocean/land boundary -->
+          <path d="M0 380 Q80 360, 160 370 Q240 380, 320 350 Q380 330, 440 340 Q520 355, 580 330 Q650 305, 720 320 Q780 335, 800 325 L800 600 L0 600 Z" fill="rgba(20,30,45,0.4)" />
+          <!-- Coastline -->
+          <path d="M0 380 Q80 360, 160 370 Q240 380, 320 350 Q380 330, 440 340 Q520 355, 580 330 Q650 305, 720 320 Q780 335, 800 325" stroke="rgba(184,190,199,0.15)" stroke-width="1.5" fill="none" />
+          <!-- Highway line -->
+          <path d="M0 280 Q120 270, 200 260 Q320 248, 420 255 Q540 264, 650 250 Q740 240, 800 245" stroke="rgba(184,190,199,0.08)" stroke-width="1" stroke-dasharray="8 6" fill="none" />
+          <!-- Grid lines -->
+          <line x1="0" y1="150" x2="800" y2="150" stroke="rgba(184,190,199,0.04)" stroke-width="0.5" />
+          <line x1="0" y1="300" x2="800" y2="300" stroke="rgba(184,190,199,0.04)" stroke-width="0.5" />
+          <line x1="0" y1="450" x2="800" y2="450" stroke="rgba(184,190,199,0.04)" stroke-width="0.5" />
+          <line x1="200" y1="0" x2="200" y2="600" stroke="rgba(184,190,199,0.04)" stroke-width="0.5" />
+          <line x1="400" y1="0" x2="400" y2="600" stroke="rgba(184,190,199,0.04)" stroke-width="0.5" />
+          <line x1="600" y1="0" x2="600" y2="600" stroke="rgba(184,190,199,0.04)" stroke-width="0.5" />
+        </svg>
+      </div>
+
+      <!-- City labels -->
+      <span class="map-label" style="top: 20%; left: 12%;">Santa Barbara</span>
+      <span class="map-label" style="top: 28%; left: 28%;">Montecito</span>
+      <span class="map-label" style="top: 36%; left: 52%;">Ventura</span>
+      <span class="map-label" style="top: 45%; left: 70%;">Thousand Oaks</span>
+      <span class="map-label" style="top: 55%; left: 82%;">Los Angeles</span>
+      <span class="map-label" style="top: 24%; left: 45%;">Goleta</span>
+      <span class="map-label" style="top: 64%; right: 10%;">Beverly Hills</span>
+
+      <!-- Project pins -->
+      <!-- 1. Montecito Estate Relocation -->
+      <div class="map-pin active" style="top: 30%; left: 30%;" data-project="1">
+        <div class="map-pin-pulse"></div>
+      </div>
+      <!-- 2. Concert Grand Piano — Santa Barbara -->
+      <div class="map-pin" style="top: 22%; left: 16%;" data-project="2"></div>
+      <!-- 3. Beverly Hills Antique Table -->
+      <div class="map-pin" style="top: 62%; left: 86%;" data-project="3"></div>
+      <!-- 4. Museum Exhibition — Ventura -->
+      <div class="map-pin" style="top: 38%; left: 56%;" data-project="4"></div>
+      <!-- 5. 2,500lb Rhino Safe — Thousand Oaks -->
+      <div class="map-pin" style="top: 47%; left: 72%;" data-project="5"></div>
+      <!-- 6. Beach Home Estate — Santa Barbara -->
+      <div class="map-pin" style="top: 25%; left: 20%;" data-project="6"></div>
+      <!-- 7. Designer Living Room — Santa Barbara -->
+      <div class="map-pin" style="top: 20%; left: 14%;" data-project="7"></div>
+      <!-- 8. Industrial Equipment — Ventura -->
+      <div class="map-pin" style="top: 40%; left: 60%;" data-project="8"></div>
+      <!-- 9. Billiard Table — Montecito -->
+      <div class="map-pin" style="top: 32%; left: 33%;" data-project="9"></div>
+      <!-- 10. Hoist Move — Ventura -->
+      <div class="map-pin" style="top: 36%; left: 54%;" data-project="10"></div>
+
+      <!-- Header overlay -->
+      <div class="map-header">
+        <div class="section-eyebrow">Project Map</div>
+        <h1>Our Work Across<br>the Coast</h1>
+        <p>10 featured projects from Ventura County to Los Angeles — estate moves, specialty handling, and everything in between.</p>
+      </div>
+
+      <!-- Stats -->
+      <div class="map-stats">
+        <div class="map-stat">
+          <div class="map-stat-num">3,500+</div>
+          <div class="map-stat-label">Moves Completed</div>
+        </div>
+        <div class="map-stat">
+          <div class="map-stat-num">3</div>
+          <div class="map-stat-label">Counties Served</div>
+        </div>
+        <div class="map-stat">
+          <div class="map-stat-num">15+</div>
+          <div class="map-stat-label">Years Operating</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECTS PANEL -->
+    <div class="projects-panel">
+      <div class="projects-header">
+        <h2>Featured Projects <span class="projects-count">10</span></h2>
+        <p>Select a project to view details</p>
+      </div>
+
+      <!-- 1 -->
+      <div class="project-card active" data-project="1">
+        <div class="project-thumb">
+          <img src="photos/montecito-mansion.jpg" alt="Montecito Estate Relocation" />
+        </div>
+        <div class="project-info">
+          <span class="project-type">Estate Move</span>
+          <div class="project-title">Montecito Estate Relocation</div>
+          <div class="project-location">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Montecito, CA
+          </div>
+          <div class="project-desc">Full estate relocation including designer furniture, artwork, and fragile antiques. Multi-day move with floor protection and custom wrapping throughout.</div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="project-card" data-project="2">
+        <div class="project-thumb">
+          <img src="photos/piano.jpg" alt="Concert Grand Piano Move" />
+        </div>
+        <div class="project-info">
+          <span class="project-type">Specialty Move</span>
+          <div class="project-title">Concert Grand Piano</div>
+          <div class="project-location">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Santa Barbara, CA
+          </div>
+          <div class="project-desc">Relocated a concert grand piano from a hillside home requiring narrow stairway navigation and specialty rigging for safe transport.</div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="project-card" data-project="3">
+        <div class="project-thumb">
+          <img src="photos/antique-table.jpg" alt="Beverly Hills Antique Table" />
+        </div>
+        <div class="project-info">
+          <span class="project-type">White-Glove</span>
+          <div class="project-title">Beverly Hills Antique Table</div>
+          <div class="project-location">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Beverly Hills, CA
+          </div>
+          <div class="project-desc">Moved a 12-seater antique dining table valued at over $40,000. Custom crating, blanket wrapping, and climate-controlled transport to new estate.</div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="project-card" data-project="4">
+        <div class="project-thumb">
+          <img src="photos/museum1.jpg" alt="Museum Exhibition Move" />
+        </div>
+        <div class="project-info">
+          <span class="project-type">Museum / Art</span>
+          <div class="project-title">Museum Exhibition Move</div>
+          <div class="project-location">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Ventura, CA
+          </div>
+          <div class="project-desc">Complete museum exhibition relocation — fine art, display cases, and mounted exhibits. Coordinated with curators for handling protocols and installation support.</div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="project-card" data-project="5">
+        <div class="project-thumb">
+          <img src="photos/safe-move.jpg" alt="2,500lb Rhino Safe" />
+        </div>
+        <div class="project-info">
+          <span class="project-type">Specialty</span>
+          <div class="project-title">2,500lb Rhino Safe</div>
+          <div class="project-location">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Thousand Oaks, CA
+          </div>
+          <div class="project-desc">Moved a 2,500-pound Rhino gun safe using hydraulic equipment, dollies, and a 4-man crew. Down a staircase and across a tile floor — zero damage.</div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="project-card" data-project="6">
+        <div class="project-thumb">
+          <img src="photos/beach-estate.jpg" alt="Beach Home Estate" />
+        </div>
+        <div class="project-info">
+          <span class="project-type">Residential</span>
+          <div class="project-title">Beach Home Estate</div>
+          <div class="project-location">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Santa Barbara, CA
+          </div>
+          <div class="project-desc">Oceanfront estate move with narrow beach access. Coordinated timed delivery with HOA and handled high-value coastal furniture throughout.</div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="project-card" data-project="7">
+        <div class="project-thumb">
+          <img src="photos/sb-designer.jpg" alt="Designer Living Room" />
+        </div>
+        <div class="project-info">
+          <span class="project-type">Residential</span>
+          <div class="project-title">Designer Living Room</div>
+          <div class="project-location">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Santa Barbara, CA
+          </div>
+          <div class="project-desc">Full living room relocation with designer sectional, custom shelving, and artwork. White-glove wrapping and precise placement at destination.</div>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="project-card" data-project="8">
+        <div class="project-thumb">
+          <img src="photos/industrial.jpg" alt="Industrial Equipment" />
+        </div>
+        <div class="project-info">
+          <span class="project-type">Commercial</span>
+          <div class="project-title">Industrial Equipment</div>
+          <div class="project-location">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Ventura, CA
+          </div>
+          <div class="project-desc">Commercial equipment relocation including heavy machinery, industrial racking, and warehouse inventory. Coordinated weekend move to minimize business downtime.</div>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="project-card" data-project="9">
+        <div class="project-thumb">
+          <img src="photos/billiard-table.jpg" alt="Billiard Table Move" />
+        </div>
+        <div class="project-info">
+          <span class="project-type">Specialty</span>
+          <div class="project-title">Billiard Table Move</div>
+          <div class="project-location">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Montecito, CA
+          </div>
+          <div class="project-desc">Disassembled, transported, and reassembled a professional billiard table with slate top. Precision leveling and felt protection throughout the process.</div>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="project-card" data-project="10">
+        <div class="project-thumb">
+          <img src="photos/hoist.jpg" alt="Hoist Move — 2nd Floor" />
+        </div>
+        <div class="project-info">
+          <span class="project-type">Specialty</span>
+          <div class="project-title">Hoist Move — 2nd Floor</div>
+          <div class="project-location">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Ventura, CA
+          </div>
+          <div class="project-desc">Used exterior hoisting equipment to deliver oversized furniture to a second-floor unit with no elevator access. Rigged, lifted, and placed safely through balcony.</div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="projects-cta">
+        <p>Ready to add your move to the map?</p>
+        <a href="tel:+18056976220" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call (805) 697-6220
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Interactive map pins <-> project cards
+    const pins = document.querySelectorAll('.map-pin');
+    const cards = document.querySelectorAll('.project-card');
+
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        const id = card.dataset.project;
+        pins.forEach(p => p.classList.remove('active'));
+        cards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+        const pin = document.querySelector(`.map-pin[data-project="${id}"]`);
+        if (pin) pin.classList.add('active');
+      });
+    });
+
+    pins.forEach(pin => {
+      pin.addEventListener('click', () => {
+        const id = pin.dataset.project;
+        pins.forEach(p => p.classList.remove('active'));
+        cards.forEach(c => c.classList.remove('active'));
+        pin.classList.add('active');
+        const card = document.querySelector(`.project-card[data-project="${id}"]`);
+        if (card) {
+          card.classList.add('active');
+          card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

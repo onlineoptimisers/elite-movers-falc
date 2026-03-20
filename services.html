@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moving Services | Elite Movers & Packing Services</title>
+  <meta name="description" content="Elite Movers offers local and long-distance moving, professional packing, commercial relocations, storage, and specialty white-glove service across Ventura, Santa Barbara and Los Angeles." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --dark: #111111;
+      --dark2: #1a1a1a;
+      --dark3: #222222;
+      --mid: #333333;
+      --grey: #888888;
+      --light-grey: #cccccc;
+      --silver: #b8bec7;
+      --silver-light: #d4d8de;
+      --white: #f8f8f8;
+      --pure-white: #ffffff;
+      --accent: #b8bec7;
+      --font-sans: 'Inter', sans-serif;
+      --font-serif: 'Playfair Display', serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ─── TOPBAR ─── */
+    .topbar {
+      background: var(--dark2);
+      border-bottom: 1px solid var(--dark3);
+      padding: 9px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--silver);
+      letter-spacing: 0.03em;
+    }
+    .topbar a { color: var(--silver); transition: color 0.2s; }
+    .topbar a:hover { color: var(--white); }
+    .topbar-left { display: flex; gap: 28px; align-items: center; }
+    .topbar-right { display: flex; gap: 24px; align-items: center; }
+    .topbar-sep { color: var(--mid); }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,10,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--dark3);
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 68px;
+    }
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--white);
+      letter-spacing: 0.02em;
+    }
+    .nav-logo span { color: var(--silver); }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      list-style: none;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .nav-links a {
+      color: var(--light-grey);
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--silver);
+      transition: width 0.3s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a.active { color: var(--white); }
+    .nav-links a.active::after { width: 100%; }
+    .nav-cta {
+      background: var(--white);
+      color: var(--black) !important;
+      padding: 10px 22px;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: background 0.2s, color 0.2s !important;
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--silver) !important; color: var(--black) !important; }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 52vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      padding: 100px 40px 80px;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--black) 0%, var(--dark2) 100%);
+      z-index: 0;
+    }
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
+      background-image: url('photos/truck-fleet.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.18;
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+    }
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: var(--silver);
+    }
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(36px, 4.5vw, 56px);
+      font-weight: 500;
+      line-height: 1.15;
+      color: var(--pure-white);
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--silver);
+    }
+    .hero-sub {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--light-grey);
+      max-width: 640px;
+      margin: 0 auto 36px;
+      font-weight: 300;
+    }
+
+    /* ─── SECTION BASE ─── */
+    section { padding: 96px 80px; }
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--silver);
+    }
+    h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 500;
+      color: var(--pure-white);
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+    .section-sub {
+      font-size: 15px;
+      color: var(--light-grey);
+      font-weight: 300;
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 56px;
+    }
+
+    /* ─── SERVICES GRID ─── */
+    .services-section {
+      background: var(--pure-white);
+      color: var(--black);
+      padding: 96px 80px;
+    }
+    .services-section .section-eyebrow { color: var(--grey); }
+    .services-section .section-eyebrow::before { background: var(--grey); }
+    .services-section h2 { color: var(--black); }
+    .services-section .section-sub { color: #555; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .service-card {
+      border: 1px solid #e0e0e0;
+      padding: 44px 32px 36px;
+      position: relative;
+      transition: all 0.3s ease;
+      background: var(--pure-white);
+      display: flex;
+      flex-direction: column;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--silver);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .service-card:hover {
+      border-color: var(--silver);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-card-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 24px;
+      color: var(--mid);
+    }
+    .service-card-icon svg {
+      width: 48px;
+      height: 48px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .service-card h3 {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--black);
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+    .service-card p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.7;
+      flex: 1;
+      margin-bottom: 24px;
+    }
+    .service-card-link {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--mid);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s, gap 0.2s;
+    }
+    .service-card:hover .service-card-link { color: var(--black); gap: 10px; }
+
+    /* ─── CTA SECTION ─── */
+    .cta-section {
+      background: var(--dark);
+      padding: 80px;
+      text-align: center;
+    }
+    .cta-section h2 { color: var(--pure-white); margin-bottom: 12px; }
+    .cta-section p {
+      font-size: 15px;
+      color: var(--light-grey);
+      font-weight: 300;
+      max-width: 500px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--pure-white);
+      color: var(--black);
+      padding: 14px 28px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: all 0.25s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--silver-light); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+
+    /* ─── TRUST STRIP ─── */
+    .trust-section {
+      background: var(--dark2);
+      border-top: 1px solid var(--dark3);
+      border-bottom: 1px solid var(--dark3);
+      padding: 56px 80px;
+      text-align: center;
+    }
+    .trust-section p {
+      font-size: 15px;
+      color: var(--light-grey);
+      line-height: 1.7;
+      font-weight: 300;
+      max-width: 640px;
+      margin: 0 auto 32px;
+    }
+    .trust-items {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 28px;
+    }
+    .trust-item {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--silver);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .trust-item svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--silver);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark2);
+      border-top: 1px solid var(--dark3);
+      padding: 56px 80px 32px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand h4 {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--pure-white);
+      margin-bottom: 12px;
+    }
+    .footer-brand p { font-size: 13px; color: var(--grey); line-height: 1.65; max-width: 280px; }
+    .footer-col h5 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul a { font-size: 13px; color: var(--grey); transition: color 0.2s; }
+    .footer-col ul a:hover { color: var(--white); }
+    .footer-contact { font-size: 13px; color: var(--grey); line-height: 1.9; }
+    .footer-contact a { color: var(--grey); transition: color 0.2s; }
+    .footer-contact a:hover { color: var(--white); }
+    .footer-phone {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      color: var(--pure-white);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .footer-bottom {
+      border-top: 1px solid var(--dark3);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--grey);
+      letter-spacing: 0.03em;
+    }
+
+    /* ─── SCROLL ANIMATION ─── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1100px) {
+      section, .services-section, .cta-section, .trust-section, footer { padding-left: 40px; padding-right: 40px; }
+      nav { padding: 0 40px; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 680px) {
+      section, .services-section, .cta-section, .trust-section, footer { padding-left: 24px; padding-right: 24px; }
+      nav { padding: 0 20px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .topbar { display: none; }
+      .nav-links { display: none; }
+      .trust-items { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <span>Serving Ventura, Santa Barbara & Greater Los Angeles</span>
+    </div>
+    <div class="topbar-right">
+      <a href="tel:+18056976220">Call (805) 697-6220</a>
+      <span class="topbar-sep">|</span>
+      <a href="mailto:elitemoversca@gmail.com">elitemoversca@gmail.com</a>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Elite <span>Movers</span></a>
+    <ul class="nav-links">
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="about.html">About Elite</a></li>
+      <li><a href="project-pages.html">Previous Work</a></li>
+      <li><a href="locations.html">Locations</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="tel:+18056976220" class="nav-cta">Call Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" style="padding-bottom:60px;">
+    <div class="hero-bg"></div>
+    <div class="hero-bg-img"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">What We Do</p>
+      <h1>Our Moving <em>Services</em></h1>
+      <p class="hero-sub">Elite offers moving, packing, storage, and relocation support for homes, businesses, and more complex moves across Ventura, Santa Barbara, and Los Angeles.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES GRID -->
+  <section class="services-section fade-in">
+    <p class="section-eyebrow">Full-Service Moving</p>
+    <h2>Everything You Need for a Smooth Move</h2>
+    <p class="section-sub">From a one-bedroom apartment to a full estate relocation, we have the experience, equipment, and care to handle it right.</p>
+
+    <div class="services-grid">
+
+      <!-- 1. Local Residential -->
+      <a href="service-local.html" class="service-card">
+        <div class="service-card-icon">
+          <svg viewBox="0 0 48 48"><path d="M6 24L24 8l18 16"/><path d="M10 22v18h10V30h8v10h10V22"/></svg>
+        </div>
+        <h3>Local Residential Moving</h3>
+        <p>Professional moving help for apartments, condos, and homes throughout the area — handled with care and strong communication.</p>
+        <span class="service-card-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <!-- 2. Long-Distance -->
+      <a href="service-longdistance.html" class="service-card">
+        <div class="service-card-icon">
+          <svg viewBox="0 0 48 48"><path d="M4 36h6l2-4h24l2 4h6"/><rect x="8" y="18" width="24" height="14" rx="2"/><path d="M32 24h8l4 8"/><circle cx="14" cy="38" r="3"/><circle cx="34" cy="38" r="3"/></svg>
+        </div>
+        <h3>Long-Distance Moving</h3>
+        <p>Carefully planned long-distance moves with dependable communication and professional handling from pickup to delivery.</p>
+        <span class="service-card-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <!-- 3. Professional Packing -->
+      <a href="services.html#packing" class="service-card">
+        <div class="service-card-icon">
+          <svg viewBox="0 0 48 48"><rect x="8" y="16" width="32" height="24" rx="2"/><path d="M8 16l4-8h24l4 8"/><path d="M20 16v24M28 16v24"/><path d="M20 28h8"/></svg>
+        </div>
+        <h3>Professional Packing</h3>
+        <p>Full or partial packing support using quality materials to protect your belongings and save time before moving day.</p>
+        <span class="service-card-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <!-- 4. Commercial Moving -->
+      <a href="services.html#commercial" class="service-card">
+        <div class="service-card-icon">
+          <svg viewBox="0 0 48 48"><rect x="6" y="12" width="36" height="28" rx="2"/><path d="M6 20h36"/><path d="M16 12V8h16v4"/><path d="M18 28h12M18 34h8"/></svg>
+        </div>
+        <h3>Commercial Moving</h3>
+        <p>Reliable moving support for offices, workspaces, equipment, and business relocations of any size.</p>
+        <span class="service-card-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <!-- 5. Short-Term Storage -->
+      <a href="services.html#storage" class="service-card">
+        <div class="service-card-icon">
+          <svg viewBox="0 0 48 48"><rect x="8" y="6" width="32" height="36" rx="2"/><path d="M8 18h32M8 30h32"/><circle cx="24" cy="12" r="2"/><circle cx="24" cy="24" r="2"/><circle cx="24" cy="36" r="2"/></svg>
+        </div>
+        <h3>Short-Term Storage</h3>
+        <p>Secure short-term storage options for moves that need flexibility between packing up and moving in.</p>
+        <span class="service-card-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <!-- 6. Specialty & White-Glove -->
+      <a href="services.html#specialty" class="service-card">
+        <div class="service-card-icon">
+          <svg viewBox="0 0 48 48"><path d="M24 6c-8 0-14 6-14 12 0 4 2 7 6 10v6h16v-6c4-3 6-6 6-10 0-6-6-12-14-12z"/><path d="M18 38h12M20 42h8"/><path d="M24 6V2M38 18h4M6 18h4M34 8l3-3M14 8l-3-3"/></svg>
+        </div>
+        <h3>Specialty & White-Glove</h3>
+        <p>Piano moves, antiques, fine art, estate contents — items that need more than standard moving care.</p>
+        <span class="service-card-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <section class="trust-section fade-in">
+    <p class="section-eyebrow">Why Elite</p>
+    <h2>Built on Reputation Since 2010</h2>
+    <p>Every move is handled by our own trained crew — no day labourers, no subcontractors. Just experienced movers who take pride in their work.</p>
+    <div class="trust-items">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>
+        500+ Five-Star Reviews
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>
+        Licensed & Insured
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" fill="none" stroke-width="1.5"/><circle cx="9" cy="7" r="4" stroke="currentColor" fill="none" stroke-width="1.5"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>
+        In-House Crews Only
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>
+        15+ Years of Experience
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section fade-in">
+    <h2>Ready to Get Started?</h2>
+    <p>Tell us about your move and we will put together a plan that fits your timeline and budget.</p>
+    <a href="tel:+18056976220" class="btn-primary">
+      Call (805) 697-6220
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h4>Elite Movers & Packing Services LLC</h4>
+        <p>Providing quality moving services throughout Ventura and surrounding areas since 2010. Licensed, insured, and built on reputation.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="service-local.html">Local Moving</a></li>
+          <li><a href="service-longdistance.html">Long Distance</a></li>
+          <li><a href="services.html#packing">Packing Services</a></li>
+          <li><a href="services.html#commercial">Commercial Moving</a></li>
+          <li><a href="services.html#specialty">Specialty Moving</a></li>
+          <li><a href="services.html#storage">Storage</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Elite</a></li>
+          <li><a href="elite-fleet.html">Elite Fleet</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="project-pages.html">Previous Work</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <div class="footer-contact">
+          <a href="tel:+18056976220" class="footer-phone">(805) 697-6220</a>
+          1845 Huron Dr<br>
+          Ventura, CA 93004<br><br>
+          <a href="mailto:elitemoversca@gmail.com">elitemoversca@gmail.com</a><br><br>
+          Mon–Sat: 7am – 9pm<br>
+          Sun: 9am – 8pm
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 Elite Movers & Packing Services LLC. All rights reserved.</span>
+      <span>Licensed & Insured &middot; Ventura, CA</span>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(el => {
+        if (el.isIntersecting) { el.target.classList.add('visible'); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

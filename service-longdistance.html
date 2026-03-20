@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Long-Distance Moving | Elite Movers & Packing Services</title>
+  <meta name="description" content="Long-distance moving services from Ventura, Santa Barbara and Los Angeles to anywhere in California and beyond. Dependable communication from pickup to delivery. Call (805) 697-6220." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --dark: #111111;
+      --dark2: #1a1a1a;
+      --dark3: #222222;
+      --mid: #333333;
+      --grey: #888888;
+      --light-grey: #cccccc;
+      --silver: #b8bec7;
+      --silver-light: #d4d8de;
+      --white: #f8f8f8;
+      --pure-white: #ffffff;
+      --accent: #b8bec7;
+      --font-sans: 'Inter', sans-serif;
+      --font-serif: 'Playfair Display', serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ─── TOPBAR ─── */
+    .topbar {
+      background: var(--dark2);
+      border-bottom: 1px solid var(--dark3);
+      padding: 9px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--silver);
+      letter-spacing: 0.03em;
+    }
+    .topbar a { color: var(--silver); transition: color 0.2s; }
+    .topbar a:hover { color: var(--white); }
+    .topbar-left { display: flex; gap: 28px; align-items: center; }
+    .topbar-right { display: flex; gap: 24px; align-items: center; }
+    .topbar-sep { color: var(--mid); }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,10,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--dark3);
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 68px;
+    }
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--white);
+      letter-spacing: 0.02em;
+    }
+    .nav-logo span { color: var(--silver); }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      list-style: none;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .nav-links a {
+      color: var(--light-grey);
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--silver);
+      transition: width 0.3s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a.active { color: var(--white); }
+    .nav-links a.active::after { width: 100%; }
+    .nav-cta {
+      background: var(--white);
+      color: var(--black) !important;
+      padding: 10px 22px;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: background 0.2s, color 0.2s !important;
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--silver) !important; color: var(--black) !important; }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 52vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 100px 80px 80px;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--black) 0%, var(--dark2) 100%);
+      z-index: 0;
+    }
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
+      background-image: url('photos/truck-28ft.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.18;
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+    }
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: var(--silver);
+    }
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(32px, 4vw, 50px);
+      font-weight: 500;
+      line-height: 1.15;
+      color: var(--pure-white);
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--silver);
+    }
+    .hero-sub {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--light-grey);
+      max-width: 560px;
+      margin-bottom: 36px;
+      font-weight: 300;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--pure-white);
+      color: var(--black);
+      padding: 14px 28px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: all 0.25s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--silver-light); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--light-grey);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid var(--mid);
+      padding-bottom: 2px;
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover { color: var(--white); border-color: var(--silver); }
+
+    /* ─── SECTION BASE ─── */
+    section { padding: 96px 80px; }
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--silver);
+    }
+    h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+    .section-sub {
+      font-size: 15px;
+      font-weight: 300;
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 48px;
+    }
+
+    /* ─── LIGHT SECTION ─── */
+    .light-section {
+      background: var(--pure-white);
+      color: var(--black);
+    }
+    .light-section h2 { color: var(--black); }
+    .light-section .section-eyebrow { color: var(--grey); }
+    .light-section .section-eyebrow::before { background: var(--grey); }
+    .light-section .section-sub { color: #555; }
+
+    /* ─── DARK SECTION ─── */
+    .dark-section {
+      background: var(--dark);
+    }
+    .dark-section h2 { color: var(--pure-white); }
+    .dark-section .section-sub { color: var(--light-grey); }
+
+    .dark2-section {
+      background: var(--dark2);
+      border-top: 1px solid var(--dark3);
+      border-bottom: 1px solid var(--dark3);
+    }
+    .dark2-section h2 { color: var(--pure-white); }
+    .dark2-section .section-sub { color: var(--light-grey); }
+
+    /* ─── INCLUDED GRID ─── */
+    .included-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .included-item {
+      padding: 36px 28px;
+      border: 1px solid #e0e0e0;
+      position: relative;
+    }
+    .included-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--silver);
+    }
+    .included-item h3 {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--black);
+      margin-bottom: 10px;
+    }
+    .included-item p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.7;
+    }
+    .included-icon {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 18px;
+      color: var(--mid);
+    }
+    .included-icon svg {
+      width: 36px;
+      height: 36px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ─── PROCESS STEPS ─── */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      counter-reset: step;
+    }
+    .process-step {
+      counter-increment: step;
+      position: relative;
+      padding-top: 20px;
+    }
+    .process-step::before {
+      content: counter(step, decimal-leading-zero);
+      font-family: var(--font-serif);
+      font-size: 36px;
+      font-weight: 400;
+      color: var(--silver);
+      opacity: 0.5;
+      display: block;
+      margin-bottom: 16px;
+    }
+    .process-step h3 {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--pure-white);
+      margin-bottom: 10px;
+    }
+    .process-step p {
+      font-size: 14px;
+      color: var(--grey);
+      line-height: 1.7;
+    }
+
+    /* ─── WHY CHOOSE ─── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .why-content h2 { color: var(--black); }
+    .why-content .section-eyebrow { color: var(--grey); }
+    .why-content .section-eyebrow::before { background: var(--grey); }
+    .why-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 32px;
+    }
+    .why-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 15px;
+      color: #444;
+      line-height: 1.6;
+    }
+    .why-list li svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      stroke: var(--silver);
+      fill: none;
+      stroke-width: 1.5;
+    }
+    .why-photo {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+    }
+
+    /* ─── INLINE CTA ─── */
+    .inline-cta {
+      background: var(--dark);
+      padding: 64px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .inline-cta h3 {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--pure-white);
+    }
+    .inline-cta p {
+      font-size: 14px;
+      color: var(--grey);
+      margin-top: 8px;
+    }
+
+    /* ─── PHOTO STRIP ─── */
+    .photo-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .photo-strip img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    /* ─── QUOTE FORM ─── */
+    .quote-section {
+      background: var(--dark2);
+      padding: 96px 80px;
+      border-top: 1px solid var(--dark3);
+    }
+    .quote-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .quote-inner h2 { color: var(--pure-white); margin-bottom: 12px; }
+    .quote-inner .section-eyebrow { justify-content: center; }
+    .quote-inner .section-sub {
+      color: var(--light-grey);
+      margin: 0 auto 48px;
+      max-width: 480px;
+    }
+    .quote-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      text-align: left;
+    }
+    .quote-form .full-width { grid-column: 1 / -1; }
+    .quote-form label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 6px;
+    }
+    .quote-form input,
+    .quote-form textarea,
+    .quote-form select {
+      width: 100%;
+      background: var(--dark3);
+      border: 1px solid var(--mid);
+      color: var(--white);
+      padding: 12px 16px;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .quote-form input:focus,
+    .quote-form textarea:focus,
+    .quote-form select:focus { border-color: var(--silver); }
+    .quote-form textarea { min-height: 120px; resize: vertical; }
+    .quote-form button {
+      grid-column: 1 / -1;
+      background: var(--pure-white);
+      color: var(--black);
+      padding: 14px 28px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s;
+      margin-top: 8px;
+    }
+    .quote-form button:hover { background: var(--silver-light); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark2);
+      border-top: 1px solid var(--dark3);
+      padding: 56px 80px 32px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand h4 {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--pure-white);
+      margin-bottom: 12px;
+    }
+    .footer-brand p { font-size: 13px; color: var(--grey); line-height: 1.65; max-width: 280px; }
+    .footer-col h5 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul a { font-size: 13px; color: var(--grey); transition: color 0.2s; }
+    .footer-col ul a:hover { color: var(--white); }
+    .footer-contact { font-size: 13px; color: var(--grey); line-height: 1.9; }
+    .footer-contact a { color: var(--grey); transition: color 0.2s; }
+    .footer-contact a:hover { color: var(--white); }
+    .footer-phone {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      color: var(--pure-white);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .footer-bottom {
+      border-top: 1px solid var(--dark3);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--grey);
+      letter-spacing: 0.03em;
+    }
+
+    /* ─── SCROLL ANIMATION ─── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1100px) {
+      section, .inline-cta, .quote-section, footer { padding-left: 40px; padding-right: 40px; }
+      nav { padding: 0 40px; }
+      .hero { padding-left: 40px; padding-right: 40px; }
+      .included-grid { grid-template-columns: 1fr 1fr; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .inline-cta { flex-direction: column; text-align: center; }
+      .photo-strip img { height: 300px; }
+    }
+    @media (max-width: 680px) {
+      section, .inline-cta, .quote-section, footer { padding-left: 24px; padding-right: 24px; }
+      nav { padding: 0 20px; }
+      .hero { padding-left: 24px; padding-right: 24px; }
+      .included-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr; }
+      .quote-form { grid-template-columns: 1fr; }
+      .photo-strip { grid-template-columns: 1fr; }
+      .photo-strip img { height: 250px; }
+      .footer-top { grid-template-columns: 1fr; }
+      .topbar { display: none; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <span>Serving Ventura, Santa Barbara & Greater Los Angeles</span>
+    </div>
+    <div class="topbar-right">
+      <a href="tel:+18056976220">Call (805) 697-6220</a>
+      <span class="topbar-sep">|</span>
+      <a href="mailto:elitemoversca@gmail.com">elitemoversca@gmail.com</a>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Elite <span>Movers</span></a>
+    <ul class="nav-links">
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="about.html">About Elite</a></li>
+      <li><a href="project-pages.html">Previous Work</a></li>
+      <li><a href="locations.html">Locations</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="tel:+18056976220" class="nav-cta">Call Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-bg-img"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Long-Distance Moving</p>
+      <h1>Long-Distance Moving — <em>California & Beyond</em></h1>
+      <p class="hero-sub">Moving out of the area does not have to mean starting from scratch with a company you do not know. Elite handles long-distance relocations with the same crew quality and communication you would get on a local move.</p>
+      <div style="display:flex; gap:14px; align-items:center; flex-wrap:wrap;">
+        <a href="tel:+18056976220" class="btn-primary">
+          Call (805) 697-6220
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#quote" class="btn-secondary">Request a Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED -->
+  <section class="light-section fade-in">
+    <p class="section-eyebrow">What's Included</p>
+    <h2>Comprehensive Long-Distance Service</h2>
+    <p class="section-sub">Every long-distance move includes the planning, protection, and coordination needed to get your household safely to its new home — no matter how far.</p>
+
+    <div class="included-grid">
+      <div class="included-item">
+        <div class="included-icon">
+          <svg viewBox="0 0 36 36"><path d="M4 28h6l2-4h12l2 4h6"/><rect x="6" y="14" width="18" height="10" rx="2"/><path d="M24 18h6l2 6"/><circle cx="10" cy="30" r="2.5"/><circle cx="26" cy="30" r="2.5"/></svg>
+        </div>
+        <h3>Dedicated Truck</h3>
+        <p>Your belongings travel on a dedicated truck — not shared with other households. No transfers, no intermediate warehouses.</p>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">
+          <svg viewBox="0 0 36 36"><rect x="4" y="8" width="28" height="22" rx="2"/><path d="M4 8l4-4h20l4 4"/><path d="M14 18h8M14 24h6"/></svg>
+        </div>
+        <h3>Full Protection Wrap</h3>
+        <p>Every piece of furniture gets blankets, stretch wrap, and corner protection. Fragile items are double-boxed and clearly labelled.</p>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">
+          <svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="14"/><path d="M18 10v8l6 4"/></svg>
+        </div>
+        <h3>Scheduled Pickup & Delivery</h3>
+        <p>We set a clear pickup and delivery window and communicate throughout transit so you always know where your belongings are.</p>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">
+          <svg viewBox="0 0 36 36"><path d="M6 30h24"/><rect x="10" y="6" width="16" height="20" rx="1"/><path d="M14 14h8M14 18h6M14 22h4"/></svg>
+        </div>
+        <h3>Detailed Inventory</h3>
+        <p>A full item-by-item inventory is created at loading and verified at delivery. Every piece is tracked from origin to destination.</p>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">
+          <svg viewBox="0 0 36 36"><path d="M18 32s12-6 12-16V8L18 4 6 8v8c0 10 12 16 12 16z"/><path d="M13 18l3 3 7-7"/></svg>
+        </div>
+        <h3>Full Insurance Coverage</h3>
+        <p>Comprehensive liability coverage for long-distance transit. We carry all required state and interstate licensing.</p>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">
+          <svg viewBox="0 0 36 36"><path d="M8 6h20v24H8z"/><path d="M14 12h8M14 18h8M14 24h4"/><path d="M8 6l4-2h20l-4 2"/></svg>
+        </div>
+        <h3>Move Coordination</h3>
+        <p>A single point of contact from quote to delivery. One person manages your move, answers your questions, and handles any issues.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO STRIP -->
+  <div class="photo-strip fade-in">
+    <img src="photos/truck-28ft.jpg" alt="Elite Movers 28-foot moving truck" />
+    <img src="photos/truck-30ft.jpg" alt="Elite Movers 30-foot moving truck" />
+  </div>
+
+  <!-- INLINE CTA -->
+  <div class="inline-cta fade-in">
+    <div>
+      <h3>Planning a Long-Distance Move?</h3>
+      <p>Talk to us early — the more lead time we have, the smoother your move will be.</p>
+    </div>
+    <a href="tel:+18056976220" class="btn-primary">
+      Call (805) 697-6220
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+  <!-- OUR PROCESS -->
+  <section class="dark-section fade-in" style="background: var(--black);">
+    <p class="section-eyebrow">Our Process</p>
+    <h2>How a Long-Distance Move Works</h2>
+    <p class="section-sub">Long-distance moves need more planning and coordination than local jobs. Here is how we make sure nothing falls through the cracks.</p>
+
+    <div class="process-grid">
+      <div class="process-step">
+        <h3>Initial Consultation</h3>
+        <p>We start with a detailed conversation about your move — destination, volume, timeline, access at both ends, and any specialty items.</p>
+      </div>
+      <div class="process-step">
+        <h3>In-Home or Virtual Survey</h3>
+        <p>We assess the full scope of your household to give you an accurate, binding quote. No surprises on moving day.</p>
+      </div>
+      <div class="process-step">
+        <h3>Packing & Loading</h3>
+        <p>Our crew packs (if needed), wraps, and loads everything onto your dedicated truck. An inventory is created and shared with you.</p>
+      </div>
+      <div class="process-step">
+        <h3>Transit & Delivery</h3>
+        <p>Your belongings are transported directly to your new home. We coordinate arrival timing and place everything exactly where you want it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE ELITE -->
+  <section class="light-section fade-in" style="padding-bottom:0;">
+    <div class="why-grid">
+      <div>
+        <img src="photos/truck-30ft.jpg" alt="Elite Movers long-distance moving truck on the road" class="why-photo" />
+      </div>
+      <div class="why-content">
+        <p class="section-eyebrow">Why Choose Elite</p>
+        <h2>What Sets Our Long-Distance Service Apart</h2>
+        <ul class="why-list">
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <span><strong>Dedicated truck, not shared freight.</strong> Your belongings are not mixed with other households or transferred between vehicles.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <span><strong>Single point of contact.</strong> One coordinator manages your move from start to finish — no call centres, no runaround.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <span><strong>Transparent pricing.</strong> You get a binding estimate based on a real survey of your home — not an over-the-phone guess that doubles on moving day.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <span><strong>Real communication.</strong> We provide updates during transit and coordinate delivery timing so you are not left wondering where your stuff is.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <span><strong>Same quality as local.</strong> The care, protection, and professionalism you get on a local move — extended across any distance.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE FORM -->
+  <section class="quote-section fade-in" id="quote">
+    <div class="quote-inner">
+      <p class="section-eyebrow">Get a Quote</p>
+      <h2>Request Your Long-Distance Estimate</h2>
+      <p class="section-sub">Give us the basics and we will reach out to schedule a survey and provide an accurate, binding quote for your move.</p>
+
+      <form class="quote-form" action="#" method="post">
+        <div>
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required />
+        </div>
+        <div>
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="(805) 000-0000" required />
+        </div>
+        <div>
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@email.com" />
+        </div>
+        <div>
+          <label for="move-date">Preferred Move Date</label>
+          <input type="date" id="move-date" name="move-date" />
+        </div>
+        <div>
+          <label for="from">Moving From</label>
+          <input type="text" id="from" name="from" placeholder="City and state" required />
+        </div>
+        <div>
+          <label for="to">Moving To</label>
+          <input type="text" id="to" name="to" placeholder="City and state" required />
+        </div>
+        <div>
+          <label for="home-size">Home Size</label>
+          <select id="home-size" name="home-size">
+            <option value="">Select size</option>
+            <option>Studio / 1 Bedroom</option>
+            <option>2 Bedrooms</option>
+            <option>3 Bedrooms</option>
+            <option>4+ Bedrooms</option>
+            <option>Office / Commercial</option>
+          </select>
+        </div>
+        <div>
+          <label for="services">Services Needed</label>
+          <select id="services" name="services">
+            <option value="">Select service</option>
+            <option>Moving Only</option>
+            <option>Moving + Packing</option>
+            <option>Moving + Storage</option>
+            <option>Full Service (Pack + Move + Unpack)</option>
+          </select>
+        </div>
+        <div class="full-width">
+          <label for="details">Additional Details</label>
+          <textarea id="details" name="details" placeholder="Specialty items, access concerns, flexible dates, storage needs — anything that helps us plan your move."></textarea>
+        </div>
+        <button type="submit">Request My Free Quote</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h4>Elite Movers & Packing Services LLC</h4>
+        <p>Providing quality moving services throughout Ventura and surrounding areas since 2010. Licensed, insured, and built on reputation.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="service-local.html">Local Moving</a></li>
+          <li><a href="service-longdistance.html">Long Distance</a></li>
+          <li><a href="services.html#packing">Packing Services</a></li>
+          <li><a href="services.html#commercial">Commercial Moving</a></li>
+          <li><a href="services.html#specialty">Specialty Moving</a></li>
+          <li><a href="services.html#storage">Storage</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Elite</a></li>
+          <li><a href="elite-fleet.html">Elite Fleet</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="project-pages.html">Previous Work</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <div class="footer-contact">
+          <a href="tel:+18056976220" class="footer-phone">(805) 697-6220</a>
+          1845 Huron Dr<br>
+          Ventura, CA 93004<br><br>
+          <a href="mailto:elitemoversca@gmail.com">elitemoversca@gmail.com</a><br><br>
+          Mon–Sat: 7am – 9pm<br>
+          Sun: 9am – 8pm
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 Elite Movers & Packing Services LLC. All rights reserved.</span>
+      <span>Licensed & Insured &middot; Ventura, CA</span>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(el => {
+        if (el.isIntersecting) { el.target.classList.add('visible'); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

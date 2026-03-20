@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Elite Fleet | Elite Movers & Packing Services</title>
+  <meta name="description" content="Explore the Elite Movers fleet — professional moving trucks from 24ft to 30ft, equipped with lift gates, ramps, and the gear to handle moves of any size." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --dark: #111111;
+      --dark2: #1a1a1a;
+      --dark3: #222222;
+      --mid: #333333;
+      --grey: #888888;
+      --light-grey: #cccccc;
+      --silver: #b8bec7;
+      --silver-light: #d4d8de;
+      --white: #f8f8f8;
+      --pure-white: #ffffff;
+      --accent: #b8bec7;
+      --font-sans: 'Inter', sans-serif;
+      --font-serif: 'Playfair Display', serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ─── TOPBAR ─── */
+    .topbar {
+      background: var(--dark2);
+      border-bottom: 1px solid var(--dark3);
+      padding: 9px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--silver);
+      letter-spacing: 0.03em;
+    }
+    .topbar a { color: var(--silver); transition: color 0.2s; }
+    .topbar a:hover { color: var(--white); }
+    .topbar-left { display: flex; gap: 28px; align-items: center; }
+    .topbar-right { display: flex; gap: 24px; align-items: center; }
+    .topbar-sep { color: var(--mid); }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,10,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--dark3);
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 68px;
+    }
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--white);
+      letter-spacing: 0.02em;
+    }
+    .nav-logo span { color: var(--silver); }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      list-style: none;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .nav-links a {
+      color: var(--light-grey);
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--silver);
+      transition: width 0.3s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta {
+      background: var(--white);
+      color: var(--black) !important;
+      padding: 10px 22px;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: background 0.2s, color 0.2s !important;
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--silver) !important; color: var(--black) !important; }
+
+    /* ─── PAGE HEADER ─── */
+    .page-header {
+      padding: 80px 80px 60px;
+      background: var(--black);
+      border-bottom: 1px solid var(--dark3);
+    }
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--silver);
+    }
+    .page-header h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 500;
+      color: var(--pure-white);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .page-header h1 em { font-style: italic; color: var(--silver); }
+    .page-header p {
+      font-size: 16px;
+      color: var(--light-grey);
+      font-weight: 300;
+      max-width: 640px;
+      line-height: 1.7;
+    }
+
+    /* ─── FLEET HERO IMAGE ─── */
+    .fleet-hero {
+      position: relative;
+      height: 400px;
+      overflow: hidden;
+      border-bottom: 1px solid var(--dark3);
+    }
+    .fleet-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.6;
+    }
+    .fleet-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, var(--black) 0%, transparent 60%);
+    }
+
+    /* ─── FLEET GRID ─── */
+    .fleet-section {
+      padding: 96px 80px;
+      background: var(--dark);
+    }
+    .fleet-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .fleet-card {
+      background: var(--dark2);
+      border: 1px solid var(--dark3);
+      overflow: hidden;
+      transition: border-color 0.3s;
+      position: relative;
+    }
+    .fleet-card:hover { border-color: var(--mid); }
+    .fleet-card-img {
+      height: 280px;
+      overflow: hidden;
+      position: relative;
+    }
+    .fleet-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s, opacity 0.3s;
+      opacity: 0.8;
+    }
+    .fleet-card:hover .fleet-card-img img {
+      transform: scale(1.03);
+      opacity: 0.95;
+    }
+    .fleet-card-body {
+      padding: 28px 28px 32px;
+    }
+    .fleet-card-body h3 {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--pure-white);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .fleet-card-body p {
+      font-size: 14px;
+      color: var(--grey);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+    .fleet-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .fleet-spec {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border: 1px solid var(--mid);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--silver);
+    }
+
+    /* ─── FEATURED TRUCK (full-width) ─── */
+    .fleet-featured {
+      background: var(--dark2);
+      border: 1px solid var(--dark3);
+      overflow: hidden;
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      transition: border-color 0.3s;
+    }
+    .fleet-featured:hover { border-color: var(--mid); }
+    .fleet-featured .fleet-card-img { height: 100%; min-height: 320px; }
+    .fleet-featured .fleet-card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px 40px;
+    }
+    .fleet-featured .fleet-card-body h3 { font-size: 26px; }
+
+    /* ─── STORAGE SECTION ─── */
+    .storage-section {
+      padding: 96px 80px;
+      background: var(--black);
+    }
+    .storage-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .storage-img {
+      height: 400px;
+      overflow: hidden;
+      border: 1px solid var(--dark3);
+      position: relative;
+    }
+    .storage-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+    }
+    .storage-content h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 3vw, 38px);
+      font-weight: 500;
+      color: var(--pure-white);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .storage-content p {
+      font-size: 15px;
+      color: var(--light-grey);
+      line-height: 1.75;
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+    .storage-features {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .storage-feature {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 14px;
+      color: var(--light-grey);
+    }
+    .storage-feature svg {
+      flex-shrink: 0;
+      color: var(--silver);
+    }
+
+    /* ─── CTA STRIP ─── */
+    .cta-strip {
+      background: var(--dark2);
+      border-top: 1px solid var(--dark3);
+      padding: 64px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+    }
+    .cta-strip h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 500;
+      color: var(--pure-white);
+      margin: 0;
+      line-height: 1.2;
+    }
+    .cta-strip p {
+      font-size: 14px;
+      color: var(--grey);
+      margin-top: 8px;
+      font-weight: 300;
+    }
+    .cta-strip-right { flex-shrink: 0; }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--pure-white);
+      color: var(--black);
+      padding: 14px 28px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: all 0.25s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--silver-light); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark2);
+      border-top: 1px solid var(--dark3);
+      padding: 56px 80px 32px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand h4 {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--pure-white);
+      margin-bottom: 12px;
+    }
+    .footer-brand p { font-size: 13px; color: var(--grey); line-height: 1.65; max-width: 280px; }
+    .footer-col h5 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul a { font-size: 13px; color: var(--grey); transition: color 0.2s; }
+    .footer-col ul a:hover { color: var(--white); }
+    .footer-contact { font-size: 13px; color: var(--grey); line-height: 1.9; }
+    .footer-contact a { color: var(--grey); transition: color 0.2s; }
+    .footer-contact a:hover { color: var(--white); }
+    .footer-phone {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      color: var(--pure-white);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .footer-bottom {
+      border-top: 1px solid var(--dark3);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--grey);
+      letter-spacing: 0.03em;
+    }
+
+    /* ─── SCROLL ANIMATION ─── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1100px) {
+      .page-header, .fleet-section, .storage-section, .cta-strip, footer { padding-left: 40px; padding-right: 40px; }
+      nav { padding: 0 40px; }
+      .fleet-grid { grid-template-columns: 1fr; }
+      .fleet-featured { grid-template-columns: 1fr; }
+      .storage-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .page-header, .fleet-section, .storage-section, .cta-strip, footer { padding-left: 24px; padding-right: 24px; }
+      nav { padding: 0 24px; }
+      .cta-strip { flex-direction: column; text-align: center; }
+      .topbar { display: none; }
+      .nav-links { display: none; }
+      .fleet-hero { height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <span>Serving Ventura, Santa Barbara & Greater Los Angeles</span>
+    </div>
+    <div class="topbar-right">
+      <a href="tel:+18056976220">Call (805) 697-6220</a>
+      <span class="topbar-sep">|</span>
+      <a href="mailto:elitemoversca@gmail.com">elitemoversca@gmail.com</a>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Elite <span>Movers</span></a>
+    <ul class="nav-links">
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About Elite</a></li>
+      <li><a href="project-pages.html">Previous Work</a></li>
+      <li><a href="locations.html">Locations</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="tel:+18056976220" class="nav-cta">Call Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header fade-in">
+    <div class="section-eyebrow">Our Vehicles</div>
+    <h1>The <em>Elite</em> Fleet</h1>
+    <p>Our fleet of professional moving vehicles is equipped to handle moves of any size — from studio apartments to full estate relocations.</p>
+  </div>
+
+  <!-- FLEET HERO -->
+  <div class="fleet-hero fade-in">
+    <img src="photos/truck-fleet.jpg" alt="The full Elite Movers fleet lineup" />
+    <div class="fleet-hero-overlay"></div>
+  </div>
+
+  <!-- FLEET GRID -->
+  <section class="fleet-section">
+    <div class="fleet-grid">
+
+      <!-- Featured: Ventura Truck -->
+      <div class="fleet-featured fade-in">
+        <div class="fleet-card-img">
+          <img src="photos/truck-ventura.jpg" alt="Elite Movers branded truck in Ventura" />
+        </div>
+        <div class="fleet-card-body">
+          <div class="section-eyebrow" style="margin-bottom:12px;">Flagship Vehicle</div>
+          <h3>Elite Movers Branded Truck</h3>
+          <p>Our signature vehicle — fully branded, fully equipped, and a familiar sight on the roads of Ventura and Santa Barbara. Purpose-built for professional residential and estate moves with full blanket and pad inventory onboard.</p>
+          <div class="fleet-specs">
+            <span class="fleet-spec">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              Full-Size
+            </span>
+            <span class="fleet-spec">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Padded Interior
+            </span>
+            <span class="fleet-spec">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              GPS Tracked
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 24ft -->
+      <div class="fleet-card fade-in">
+        <div class="fleet-card-img">
+          <img src="photos/truck-24ft.jpg" alt="24-Foot Box Truck with Lift Gate" />
+        </div>
+        <div class="fleet-card-body">
+          <h3>24-Foot Box Truck</h3>
+          <p>Ideal for 1–2 bedroom apartments and smaller home moves. Equipped with a hydraulic lift gate for safe loading of heavy items without ramps.</p>
+          <div class="fleet-specs">
+            <span class="fleet-spec">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              24 Feet
+            </span>
+            <span class="fleet-spec">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/></svg>
+              Lift Gate
+            </span>
+            <span class="fleet-spec">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+              1–2 Bed
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 28ft -->
+      <div class="fleet-card fade-in">
+        <div class="fleet-card-img">
+          <img src="photos/truck-28ft.jpg" alt="28-Foot Box Truck" />
+        </div>
+        <div class="fleet-card-body">
+          <h3>28-Foot Box Truck</h3>
+          <p>Our mid-range workhorse — fits most 2–3 bedroom homes comfortably, with room for furniture, appliances, and a full packing inventory.</p>
+          <div class="fleet-specs">
+            <span class="fleet-spec">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              28 Feet
+            </span>
+            <span class="fleet-spec">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Padded Interior
+            </span>
+            <span class="fleet-spec">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+              2–3 Bed
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 30ft -->
+      <div class="fleet-card fade-in">
+        <div class="fleet-card-img">
+          <img src="photos/truck-30ft.jpg" alt="30-Foot Truck — Full Estate Capacity" />
+        </div>
+        <div class="fleet-card-body">
+          <h3>30-Foot Box Truck</h3>
+          <p>Our largest vehicle — built for 4+ bedroom homes, estate relocations, and commercial jobs. Maximum capacity for moves that need it all in one trip.</p>
+          <div class="fleet-specs">
+            <span class="fleet-spec">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              30 Feet
+            </span>
+            <span class="fleet-spec">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/></svg>
+              Ramp + Lift Gate
+            </span>
+            <span class="fleet-spec">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+              4+ Bed / Estate
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STORAGE SECTION -->
+  <section class="storage-section fade-in">
+    <div class="section-eyebrow" style="margin-bottom:20px;">Secure Storage</div>
+    <div class="storage-grid">
+      <div class="storage-img">
+        <img src="photos/storage.jpg" alt="Elite Storage Warehouse — Secure short-term storage" />
+      </div>
+      <div class="storage-content">
+        <h2>Elite Storage Warehouse</h2>
+        <p>Need a place to keep your belongings between moves? Our secure storage warehouse offers short-term storage solutions for residential and commercial clients.</p>
+        <p>Whether you're between homes, waiting on a closing date, or need to stage a property — your items stay protected, organized, and ready to go when you are.</p>
+        <div class="storage-features">
+          <div class="storage-feature">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Secure, monitored facility</span>
+          </div>
+          <div class="storage-feature">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>Climate-appropriate environment</span>
+          </div>
+          <div class="storage-feature">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Flexible short-term arrangements</span>
+          </div>
+          <div class="storage-feature">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <span>Direct pickup and delivery from warehouse</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <div class="cta-strip fade-in">
+    <div>
+      <h2>Need the right truck for your move?</h2>
+      <p>Call to discuss your move and we'll match the right vehicle and crew to the job.</p>
+    </div>
+    <div class="cta-strip-right">
+      <a href="tel:+18056976220" class="btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (805) 697-6220
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h4>Elite Movers & Packing Services LLC</h4>
+        <p>Providing quality moving services throughout Ventura and surrounding areas since 2010. Licensed, insured, and built on reputation.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services/local-residential.html">Local Moving</a></li>
+          <li><a href="services/long-distance.html">Long Distance</a></li>
+          <li><a href="services/packing.html">Packing Services</a></li>
+          <li><a href="services/commercial.html">Commercial Moving</a></li>
+          <li><a href="services/specialty.html">Specialty Moving</a></li>
+          <li><a href="services/storage.html">Storage</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Elite</a></li>
+          <li><a href="elite-fleet.html">Elite Fleet</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="project-pages.html">Previous Work</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <div class="footer-contact">
+          <a href="tel:+18056976220" class="footer-phone">(805) 697-6220</a>
+          1845 Huron Dr<br>
+          Ventura, CA 93004<br><br>
+          <a href="mailto:elitemoversca@gmail.com">elitemoversca@gmail.com</a><br><br>
+          Mon–Sat: 7am – 9pm<br>
+          Sun: 9am – 8pm
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 Elite Movers & Packing Services LLC. All rights reserved.</span>
+      <span>Licensed & Insured &middot; Ventura, CA</span>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(el => {
+        if (el.isIntersecting) {
+          el.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

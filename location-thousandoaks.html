@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movers in Thousand Oaks, CA | Elite Movers & Packing Services</title>
+  <meta name="description" content="Professional movers in Thousand Oaks, CA. Elite Movers & Packing Services — local and long-distance moving, packing, storage for Thousand Oaks and the Conejo Valley. Call (805) 697-6220." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0a0a0a; --dark: #111111; --dark2: #1a1a1a; --dark3: #222222;
+      --mid: #333333; --grey: #888888; --light-grey: #cccccc;
+      --silver: #b8bec7; --silver-light: #d4d8de;
+      --white: #f8f8f8; --pure-white: #ffffff; --accent: #b8bec7;
+      --font-sans: 'Inter', sans-serif; --font-serif: 'Playfair Display', serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); background: var(--black); color: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .topbar { background: var(--dark2); border-bottom: 1px solid var(--dark3); padding: 9px 40px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--silver); letter-spacing: 0.03em; }
+    .topbar a { color: var(--silver); transition: color 0.2s; } .topbar a:hover { color: var(--white); }
+    .topbar-left { display: flex; gap: 28px; align-items: center; }
+    .topbar-right { display: flex; gap: 24px; align-items: center; }
+    .topbar-sep { color: var(--mid); }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(10,10,10,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--dark3); padding: 0 40px; display: flex; justify-content: space-between; align-items: center; height: 68px; }
+    .nav-logo { font-family: var(--font-serif); font-size: 20px; font-weight: 500; color: var(--white); letter-spacing: 0.02em; }
+    .nav-logo span { color: var(--silver); }
+    .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; }
+    .nav-links a { color: var(--light-grey); transition: color 0.2s; position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 1px; background: var(--silver); transition: width 0.3s; }
+    .nav-links a:hover { color: var(--white); } .nav-links a:hover::after { width: 100%; }
+    .nav-links a.active { color: var(--white); } .nav-links a.active::after { width: 100%; }
+    .nav-cta { background: var(--white); color: var(--black) !important; padding: 10px 22px; font-weight: 600; font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; transition: background 0.2s, color 0.2s !important; }
+    .nav-cta::after { display: none !important; } .nav-cta:hover { background: var(--silver) !important; color: var(--black) !important; }
+
+    .loc-hero { min-height: 70vh; display: grid; grid-template-columns: 1fr 1fr; gap: 0; position: relative; overflow: hidden; }
+    .loc-hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, var(--black) 0%, var(--dark2) 100%); z-index: 0; }
+    .loc-hero-img { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0.15; z-index: 1; }
+    .loc-hero-left { position: relative; z-index: 2; padding: 100px 60px 80px 80px; display: flex; flex-direction: column; justify-content: center; }
+    .loc-hero-right { position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; padding: 80px 60px; }
+    .loc-hero-photo { width: 100%; max-width: 480px; height: 400px; overflow: hidden; border: 1px solid var(--dark3); position: relative; }
+    .loc-hero-photo img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; }
+
+    .section-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--silver); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+    .section-eyebrow::before { content: ''; display: inline-block; width: 24px; height: 1px; background: var(--silver); }
+
+    .loc-hero h1 { font-family: var(--font-serif); font-size: clamp(36px, 4.5vw, 54px); font-weight: 500; line-height: 1.12; color: var(--pure-white); margin-bottom: 24px; letter-spacing: -0.01em; }
+    .loc-hero h1 em { font-style: italic; color: var(--silver); }
+    .loc-hero-sub { font-size: 16px; line-height: 1.7; color: var(--light-grey); max-width: 520px; margin-bottom: 32px; font-weight: 300; }
+
+    .trust-strip { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-bottom: 36px; }
+    .trust-item { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--silver); display: flex; align-items: center; gap: 6px; }
+    .trust-item svg { width: 14px; height: 14px; stroke: var(--silver); fill: none; stroke-width: 2; }
+
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--pure-white); color: var(--black); padding: 14px 28px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; transition: all 0.25s; border: none; cursor: pointer; }
+    .btn-primary:hover { background: var(--silver-light); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 8px; color: var(--silver); font-size: 13px; font-weight: 500; letter-spacing: 0.04em; border-bottom: 1px solid var(--mid); padding-bottom: 2px; transition: all 0.2s; }
+    .btn-secondary:hover { color: var(--white); border-color: var(--silver); }
+    .hero-actions { display: flex; gap: 14px; align-items: center; }
+
+    section { padding: 96px 80px; }
+    h2 { font-family: var(--font-serif); font-size: clamp(28px, 3vw, 40px); font-weight: 500; color: var(--pure-white); line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.01em; }
+    .section-sub { font-size: 15px; color: var(--light-grey); font-weight: 300; max-width: 580px; line-height: 1.7; margin-bottom: 56px; }
+
+    .why-location { background: var(--dark); }
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .why-card { background: var(--dark2); padding: 40px 28px; border: 1px solid var(--dark3); transition: background 0.3s, border-color 0.3s; }
+    .why-card:hover { background: var(--dark3); border-color: var(--mid); }
+    .why-card-icon { margin-bottom: 18px; }
+    .why-card-icon svg { width: 32px; height: 32px; stroke: var(--silver); fill: none; stroke-width: 1.5; }
+    .why-card h3 { font-size: 15px; font-weight: 600; color: var(--pure-white); margin-bottom: 10px; line-height: 1.3; }
+    .why-card p { font-size: 13px; color: var(--grey); line-height: 1.65; }
+
+    .services-section { background: var(--black); }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .service-card { background: var(--dark2); padding: 36px 32px; border: 1px solid var(--dark3); transition: all 0.3s; cursor: pointer; position: relative; overflow: hidden; display: block; }
+    .service-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--silver); transition: width 0.4s; }
+    .service-card:hover { background: var(--dark3); border-color: var(--mid); } .service-card:hover::after { width: 100%; }
+    .service-icon { margin-bottom: 18px; }
+    .service-icon svg { width: 28px; height: 28px; stroke: var(--silver); fill: none; stroke-width: 1.5; }
+    .service-card h3 { font-family: var(--font-serif); font-size: 19px; font-weight: 500; color: var(--pure-white); margin-bottom: 10px; line-height: 1.3; }
+    .service-card p { font-size: 13px; color: var(--grey); line-height: 1.65; }
+
+    .testimonial-section { background: var(--dark2); border-top: 1px solid var(--dark3); border-bottom: 1px solid var(--dark3); padding: 80px; }
+    .testimonial-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+    .testimonial-stars { color: var(--silver); font-size: 16px; letter-spacing: 3px; margin-bottom: 24px; }
+    .testimonial-text { font-family: var(--font-serif); font-size: 22px; font-weight: 400; color: var(--pure-white); line-height: 1.6; font-style: italic; margin-bottom: 24px; }
+    .testimonial-author { font-size: 13px; font-weight: 600; color: var(--silver); letter-spacing: 0.05em; text-transform: uppercase; }
+    .testimonial-loc { font-size: 12px; color: var(--grey); margin-top: 4px; }
+
+    .quote-section { background: var(--dark); border-bottom: 1px solid var(--dark3); padding: 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .quote-form-img { background: var(--dark2); border: 1px solid var(--dark3); height: 340px; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+    .quote-form-img img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+    .quote-form-fields { display: flex; flex-direction: column; gap: 0; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-group { display: flex; flex-direction: column; margin-bottom: 12px; }
+    .form-group label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey); margin-bottom: 6px; }
+    .form-group input, .form-group select { background: var(--dark3); border: 1px solid #2e2e2e; color: var(--white); padding: 12px 14px; font-size: 14px; font-family: var(--font-sans); transition: border-color 0.2s; outline: none; -webkit-appearance: none; }
+    .form-group input:focus, .form-group select:focus { border-color: var(--silver); }
+    .form-group input::placeholder { color: var(--mid); }
+    .form-submit { background: var(--pure-white); color: var(--black); border: none; padding: 14px 28px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: all 0.25s; margin-top: 8px; width: 100%; }
+    .form-submit:hover { background: var(--silver-light); transform: translateY(-1px); }
+    .form-note { font-size: 12px; color: var(--grey); margin-top: 10px; text-align: center; }
+    .form-note a { color: var(--silver); }
+
+    .other-areas { background: var(--black); }
+    .other-areas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .other-area-card { background: var(--dark2); border: 1px solid var(--dark3); padding: 32px 28px; transition: all 0.3s; display: block; }
+    .other-area-card:hover { border-color: var(--mid); background: var(--dark3); }
+    .other-area-card h3 { font-family: var(--font-serif); font-size: 20px; font-weight: 500; color: var(--pure-white); margin-bottom: 6px; }
+    .other-area-card .area-region { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--silver); margin-bottom: 10px; }
+    .other-area-card p { font-size: 13px; color: var(--grey); line-height: 1.6; margin-bottom: 14px; }
+    .other-area-link { font-size: 12px; color: var(--silver); letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid var(--mid); padding-bottom: 2px; transition: all 0.2s; display: inline-block; }
+    .other-area-card:hover .other-area-link { color: var(--white); border-color: var(--silver); }
+
+    .cta-banner { background: var(--dark2); border-top: 1px solid var(--dark3); padding: 96px 80px; display: grid; grid-template-columns: 1fr auto; gap: 60px; align-items: center; }
+    .cta-banner h2 { margin-bottom: 12px; } .cta-banner p { font-size: 15px; color: var(--grey); font-weight: 300; }
+    .cta-actions { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
+    .cta-call { display: flex; align-items: center; gap: 12px; background: var(--pure-white); color: var(--black); padding: 18px 32px; font-size: 15px; font-weight: 700; letter-spacing: 0.03em; transition: all 0.25s; white-space: nowrap; }
+    .cta-call:hover { background: var(--silver-light); transform: translateY(-1px); box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
+    .cta-sub { font-size: 12px; color: var(--grey); text-align: center; } .cta-sub a { color: var(--silver); }
+
+    footer { background: var(--dark2); border-top: 1px solid var(--dark3); padding: 56px 80px 32px; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 48px; margin-bottom: 48px; }
+    .footer-brand h4 { font-family: var(--font-serif); font-size: 18px; font-weight: 500; color: var(--pure-white); margin-bottom: 12px; }
+    .footer-brand p { font-size: 13px; color: var(--grey); line-height: 1.65; max-width: 280px; }
+    .footer-col h5 { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--silver); margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul a { font-size: 13px; color: var(--grey); transition: color 0.2s; } .footer-col ul a:hover { color: var(--white); }
+    .footer-contact { font-size: 13px; color: var(--grey); line-height: 1.9; }
+    .footer-contact a { color: var(--grey); transition: color 0.2s; } .footer-contact a:hover { color: var(--white); }
+    .footer-phone { font-family: var(--font-serif); font-size: 22px; color: var(--pure-white); margin-bottom: 12px; display: block; }
+    .footer-bottom { border-top: 1px solid var(--dark3); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--grey); letter-spacing: 0.03em; }
+
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1100px) {
+      section, .quote-section, .cta-banner, footer, .testimonial-section { padding-left: 40px; padding-right: 40px; }
+      nav { padding: 0 40px; }
+      .loc-hero { grid-template-columns: 1fr; min-height: auto; }
+      .loc-hero-left { padding: 80px 40px 40px; } .loc-hero-right { padding: 0 40px 60px; }
+      .services-grid, .why-grid, .other-areas-grid { grid-template-columns: 1fr 1fr; }
+      .quote-section { grid-template-columns: 1fr; }
+      .cta-banner { grid-template-columns: 1fr; text-align: center; } .cta-actions { align-items: center; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      section, .quote-section, .cta-banner, footer, .testimonial-section { padding-left: 24px; padding-right: 24px; }
+      nav { padding: 0 20px; } .topbar { padding: 9px 20px; flex-direction: column; gap: 6px; }
+      .nav-links { display: none; }
+      .services-grid, .why-grid, .other-areas-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; } .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-left"><span>Serving Ventura, Santa Barbara & Greater Los Angeles</span></div>
+    <div class="topbar-right">
+      <a href="tel:+18056976220">Call (805) 697-6220</a>
+      <span class="topbar-sep">|</span>
+      <a href="mailto:elitemoversca@gmail.com">elitemoversca@gmail.com</a>
+    </div>
+  </div>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Elite <span>Movers</span></a>
+    <ul class="nav-links">
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About Elite</a></li>
+      <li><a href="project-pages.html">Previous Work</a></li>
+      <li><a href="locations.html" class="active">Locations</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="tel:+18056976220" class="nav-cta">Call Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="loc-hero" style="padding:0;">
+    <div class="loc-hero-bg"></div>
+    <div class="loc-hero-img" style="background-image: url('photos/estates-universal.jpg');"></div>
+    <div class="loc-hero-left">
+      <p class="section-eyebrow">Thousand Oaks, California</p>
+      <h1>Movers in <em>Thousand Oaks, CA</em></h1>
+      <p class="loc-hero-sub">Thousand Oaks and the Conejo Valley are known for family-friendly neighborhoods, well-kept homes, and a strong sense of community. Elite Movers brings the same reliable, careful service that families here expect — whether you're moving across town or across the state.</p>
+      <div class="trust-strip">
+        <span class="trust-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> 150+ 5-Star Reviews</span>
+        <span class="trust-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Trusted by Families</span>
+        <span class="trust-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Licensed & Insured</span>
+      </div>
+      <div class="hero-actions">
+        <a href="tel:+18056976220" class="btn-primary"><span>&#9742;</span> Call (805) 697-6220</a>
+        <a href="#quote-form" class="btn-secondary">Get a quote &rarr;</a>
+      </div>
+    </div>
+    <div class="loc-hero-right">
+      <div class="loc-hero-photo">
+        <img src="photos/estates-universal.jpg" alt="Elite Movers serving Thousand Oaks and Conejo Valley" />
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY ELITE IN THOUSAND OAKS -->
+  <section class="why-location fade-in">
+    <div class="section-eyebrow">Why Elite in Thousand Oaks</div>
+    <h2>The Right Movers for the Conejo Valley</h2>
+    <p class="section-sub">Thousand Oaks families choose Elite for reliability, communication, and care.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Family-Focused Service</h3>
+        <p>We understand the stress of moving a family. Our crews are patient, organized, and know how to keep a move on track even when kids and pets are part of the equation.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Know the Neighborhoods</h3>
+        <p>From Westlake Village and Newbury Park to Agoura Hills and Oak Park — we know the communities, the HOA rules, and the access challenges that come with the territory.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <h3>Full Fleet Coverage</h3>
+        <p>Our trucks are sized for every job — from apartment moves to large family homes. We bring the right equipment so nothing takes longer than it needs to.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section fade-in">
+    <div class="section-eyebrow">Services in Thousand Oaks</div>
+    <h2>Moving Services for Thousand Oaks</h2>
+    <p class="section-sub">Full-service moving solutions for families and businesses in the Conejo Valley.</p>
+    <div class="services-grid">
+      <a href="services/local-residential.html" class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Local Residential Moving</h3>
+        <p>Family homes, condos, and apartments across Thousand Oaks and the Conejo Valley — handled with care from start to finish.</p>
+      </a>
+      <a href="services/packing.html" class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        </div>
+        <h3>Professional Packing</h3>
+        <p>Full or partial packing support with quality materials. Let us handle the packing so you can focus on the transition.</p>
+      </a>
+      <a href="services/commercial.html" class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+        </div>
+        <h3>Commercial Moving</h3>
+        <p>Office relocations, business equipment, and workspace moves for Conejo Valley businesses of every size.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <div class="testimonial-section fade-in">
+    <div class="testimonial-inner">
+      <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testimonial-text">"Quick, efficient, great to work with. Everything arrived in perfect condition. Will only use Elite from now on."</p>
+      <div class="testimonial-author">Christina D.</div>
+      <div class="testimonial-loc">Conejo Valley, CA</div>
+    </div>
+  </div>
+
+  <!-- QUOTE FORM -->
+  <div class="quote-section fade-in" id="quote-form">
+    <div class="quote-form-img">
+      <img src="photos/furniture.jpg" alt="Elite Movers handling furniture in Thousand Oaks" />
+    </div>
+    <div>
+      <div class="section-eyebrow">Get a Quote</div>
+      <h2>Request a Free Thousand Oaks Moving Quote</h2>
+      <p class="section-sub" style="margin-bottom:28px;">Tell us about your move and we'll get back to you quickly with a clear, straightforward quote.</p>
+      <div class="quote-form-fields">
+        <div class="form-row">
+          <div class="form-group"><label>Full Name</label><input type="text" placeholder="Your name" /></div>
+          <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="(805) 000-0000" /></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Moving From</label><input type="text" placeholder="City or zip code" /></div>
+          <div class="form-group"><label>Moving To</label><input type="text" placeholder="City or zip code" /></div>
+        </div>
+        <div class="form-group">
+          <label>Size of Home or Office</label>
+          <select>
+            <option value="" disabled selected>Select...</option>
+            <option>Studio / 1 Bedroom</option>
+            <option>2 Bedrooms</option>
+            <option>3 Bedrooms</option>
+            <option>4+ Bedrooms</option>
+            <option>Office / Commercial</option>
+          </select>
+        </div>
+        <button class="form-submit">Request a Quote</button>
+        <p class="form-note">Need to speak now? <a href="tel:+18056976220">Call (805) 697-6220</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- OTHER AREAS -->
+  <section class="other-areas fade-in">
+    <div class="section-eyebrow">Other Areas We Serve</div>
+    <h2>Explore More Locations</h2>
+    <p class="section-sub">Elite Movers serves communities across the region.</p>
+    <div class="other-areas-grid">
+      <a href="location-ventura.html" class="other-area-card">
+        <h3>Ventura</h3>
+        <div class="area-region">Ventura County</div>
+        <p>Our home base since 2010. Local expertise for every Ventura County move.</p>
+        <span class="other-area-link">View Ventura &rarr;</span>
+      </a>
+      <a href="location-santabarbara.html" class="other-area-card">
+        <h3>Santa Barbara</h3>
+        <div class="area-region">Santa Barbara County</div>
+        <p>Professional moving for Santa Barbara's coastal homes and hillside properties.</p>
+        <span class="other-area-link">View Santa Barbara &rarr;</span>
+      </a>
+      <a href="location-montecito.html" class="other-area-card">
+        <h3>Montecito</h3>
+        <div class="area-region">Santa Barbara County</div>
+        <p>White-glove moving for Montecito's estate homes and high-value relocations.</p>
+        <span class="other-area-link">View Montecito &rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-banner fade-in">
+    <div>
+      <div class="section-eyebrow" style="margin-bottom:12px;">Ready to Move?</div>
+      <h2>Let's Plan Your Thousand Oaks Move</h2>
+      <p>Call now to speak with our team about your move.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="tel:+18056976220" class="cta-call"><span>&#9742;</span> Call (805) 697-6220</a>
+      <p class="cta-sub">Or <a href="contact.html#quote-form">request a quote online &rarr;</a></p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h4>Elite Movers & Packing Services LLC</h4>
+        <p>Providing quality moving services throughout Ventura and surrounding areas since 2010. Licensed, insured, and built on reputation.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services/local-residential.html">Local Moving</a></li>
+          <li><a href="services/long-distance.html">Long Distance</a></li>
+          <li><a href="services/packing.html">Packing Services</a></li>
+          <li><a href="services/commercial.html">Commercial Moving</a></li>
+          <li><a href="services/specialty.html">Specialty Moving</a></li>
+          <li><a href="services/storage.html">Storage</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Elite</a></li>
+          <li><a href="elite-fleet.html">Elite Fleet</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="project-pages.html">Previous Work</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <div class="footer-contact">
+          <a href="tel:+18056976220" class="footer-phone">(805) 697-6220</a>
+          1845 Huron Dr<br>Ventura, CA 93004<br><br>
+          <a href="mailto:elitemoversca@gmail.com">elitemoversca@gmail.com</a><br><br>
+          Mon&ndash;Sat: 7am &ndash; 9pm<br>Sun: 9am &ndash; 8pm
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 Elite Movers & Packing Services LLC. All rights reserved.</span>
+      <span>Licensed & Insured &middot; Ventura, CA</span>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(el => { if (el.isIntersecting) { el.target.classList.add('visible'); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
