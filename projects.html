@@ -140,43 +140,61 @@
     .map-bg {
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(ellipse 80% 60% at 45% 50%, rgba(30,40,55,0.5) 0%, transparent 70%),
-        linear-gradient(135deg, var(--dark) 0%, #0d1117 50%, #111820 100%);
     }
-
-    /* Stylized coastline */
-    .map-coast {
-      position: absolute;
-      inset: 0;
-    }
-    .map-coast svg {
+    .map-bg iframe {
       width: 100%;
       height: 100%;
+      border: none;
+      filter: saturate(0.15) brightness(0.35) contrast(1.4);
+      pointer-events: none;
+    }
+    .map-panel:hover .map-bg iframe {
+      pointer-events: auto;
     }
 
-    /* Map pin */
+    /* Map pin — branded shield marker */
     .map-pin {
       position: absolute;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: var(--silver);
-      border: 2px solid var(--pure-white);
-      box-shadow: 0 0 12px rgba(184,190,199,0.4), 0 0 30px rgba(184,190,199,0.15);
       z-index: 10;
       cursor: pointer;
-      transition: transform 0.25s, box-shadow 0.25s;
+      transition: transform 0.3s, filter 0.3s;
+      transform: translate(-50%, -100%);
     }
     .map-pin:hover {
-      transform: scale(1.3);
-      box-shadow: 0 0 18px rgba(184,190,199,0.6), 0 0 40px rgba(184,190,199,0.25);
+      transform: translate(-50%, -100%) scale(1.15);
+      filter: brightness(1.2);
     }
     .map-pin.active {
-      background: var(--pure-white);
-      box-shadow: 0 0 20px rgba(255,255,255,0.5), 0 0 50px rgba(184,190,199,0.3);
-      transform: scale(1.4);
+      transform: translate(-50%, -100%) scale(1.25);
+      filter: brightness(1.3) drop-shadow(0 0 12px rgba(255,255,255,0.4));
     }
+    .pin-marker {
+      width: 36px;
+      height: 46px;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    .pin-marker svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 3px 8px rgba(0,0,0,0.5));
+    }
+    .pin-label {
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-serif);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--black);
+      letter-spacing: 0.02em;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .map-pin.active .pin-label { color: var(--black); }
     .map-pin-pulse {
       position: absolute;
       width: 32px;
@@ -476,59 +494,52 @@
 
     <!-- MAP PANEL -->
     <div class="map-panel">
-      <div class="map-bg"></div>
-
-      <!-- Stylized coastline SVG -->
-      <div class="map-coast">
-        <svg viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-          <!-- Ocean/land boundary -->
-          <path d="M0 380 Q80 360, 160 370 Q240 380, 320 350 Q380 330, 440 340 Q520 355, 580 330 Q650 305, 720 320 Q780 335, 800 325 L800 600 L0 600 Z" fill="rgba(20,30,45,0.4)" />
-          <!-- Coastline -->
-          <path d="M0 380 Q80 360, 160 370 Q240 380, 320 350 Q380 330, 440 340 Q520 355, 580 330 Q650 305, 720 320 Q780 335, 800 325" stroke="rgba(184,190,199,0.15)" stroke-width="1.5" fill="none" />
-          <!-- Highway line -->
-          <path d="M0 280 Q120 270, 200 260 Q320 248, 420 255 Q540 264, 650 250 Q740 240, 800 245" stroke="rgba(184,190,199,0.08)" stroke-width="1" stroke-dasharray="8 6" fill="none" />
-          <!-- Grid lines -->
-          <line x1="0" y1="150" x2="800" y2="150" stroke="rgba(184,190,199,0.04)" stroke-width="0.5" />
-          <line x1="0" y1="300" x2="800" y2="300" stroke="rgba(184,190,199,0.04)" stroke-width="0.5" />
-          <line x1="0" y1="450" x2="800" y2="450" stroke="rgba(184,190,199,0.04)" stroke-width="0.5" />
-          <line x1="200" y1="0" x2="200" y2="600" stroke="rgba(184,190,199,0.04)" stroke-width="0.5" />
-          <line x1="400" y1="0" x2="400" y2="600" stroke="rgba(184,190,199,0.04)" stroke-width="0.5" />
-          <line x1="600" y1="0" x2="600" y2="600" stroke="rgba(184,190,199,0.04)" stroke-width="0.5" />
-        </svg>
+      <div class="map-bg">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-120.05%2C33.95%2C-118.25%2C34.75&layer=mapnik" loading="lazy"></iframe>
       </div>
 
-      <!-- City labels -->
-      <span class="map-label" style="top: 20%; left: 12%;">Santa Barbara</span>
-      <span class="map-label" style="top: 28%; left: 28%;">Montecito</span>
-      <span class="map-label" style="top: 36%; left: 52%;">Ventura</span>
-      <span class="map-label" style="top: 45%; left: 70%;">Thousand Oaks</span>
-      <span class="map-label" style="top: 55%; left: 82%;">Los Angeles</span>
-      <span class="map-label" style="top: 24%; left: 45%;">Goleta</span>
-      <span class="map-label" style="top: 64%; right: 10%;">Beverly Hills</span>
-
-      <!-- Project pins -->
-      <!-- 1. Montecito Estate Relocation -->
-      <div class="map-pin active" style="top: 30%; left: 30%;" data-project="1">
-        <div class="map-pin-pulse"></div>
+      <!-- Project pins — branded EM shield markers -->
+      <!-- Positions mapped to real geography: bbox -120.05,33.95 to -118.25,34.75 -->
+      <!-- 1. Montecito Estate Relocation (34.44, -119.63) -->
+      <div class="map-pin active" style="top: 39%; left: 23%;" data-project="1">
+        <div class="pin-marker"><svg viewBox="0 0 36 46" xmlns="http://www.w3.org/2000/svg"><path d="M18 46 C18 46 2 28 2 16 C2 7.2 9.2 0 18 0 C26.8 0 34 7.2 34 16 C34 28 18 46 18 46Z" fill="#fff"/><circle cx="18" cy="15" r="10" fill="#0a0a0a"/></svg><span class="pin-label" style="top:10px; color:#fff;">EM</span></div>
       </div>
-      <!-- 2. Concert Grand Piano — Santa Barbara -->
-      <div class="map-pin" style="top: 22%; left: 16%;" data-project="2"></div>
-      <!-- 3. Beverly Hills Antique Table -->
-      <div class="map-pin" style="top: 62%; left: 86%;" data-project="3"></div>
-      <!-- 4. Museum Exhibition — Ventura -->
-      <div class="map-pin" style="top: 38%; left: 56%;" data-project="4"></div>
-      <!-- 5. 2,500lb Rhino Safe — Thousand Oaks -->
-      <div class="map-pin" style="top: 47%; left: 72%;" data-project="5"></div>
-      <!-- 6. Beach Home Estate — Santa Barbara -->
-      <div class="map-pin" style="top: 25%; left: 20%;" data-project="6"></div>
-      <!-- 7. Designer Living Room — Santa Barbara -->
-      <div class="map-pin" style="top: 20%; left: 14%;" data-project="7"></div>
-      <!-- 8. Industrial Equipment — Ventura -->
-      <div class="map-pin" style="top: 40%; left: 60%;" data-project="8"></div>
-      <!-- 9. Billiard Table — Montecito -->
-      <div class="map-pin" style="top: 32%; left: 33%;" data-project="9"></div>
-      <!-- 10. Hoist Move — Ventura -->
-      <div class="map-pin" style="top: 36%; left: 54%;" data-project="10"></div>
+      <!-- 2. Concert Grand Piano — Santa Barbara (34.42, -119.70) -->
+      <div class="map-pin" style="top: 41%; left: 19%;" data-project="2">
+        <div class="pin-marker"><svg viewBox="0 0 36 46" xmlns="http://www.w3.org/2000/svg"><path d="M18 46 C18 46 2 28 2 16 C2 7.2 9.2 0 18 0 C26.8 0 34 7.2 34 16 C34 28 18 46 18 46Z" fill="#fff"/><circle cx="18" cy="15" r="10" fill="#0a0a0a"/></svg><span class="pin-label" style="top:10px; color:#fff;">EM</span></div>
+      </div>
+      <!-- 3. Beverly Hills Antique Table (34.07, -118.40) -->
+      <div class="map-pin" style="top: 85%; left: 92%;" data-project="3">
+        <div class="pin-marker"><svg viewBox="0 0 36 46" xmlns="http://www.w3.org/2000/svg"><path d="M18 46 C18 46 2 28 2 16 C2 7.2 9.2 0 18 0 C26.8 0 34 7.2 34 16 C34 28 18 46 18 46Z" fill="#fff"/><circle cx="18" cy="15" r="10" fill="#0a0a0a"/></svg><span class="pin-label" style="top:10px; color:#fff;">EM</span></div>
+      </div>
+      <!-- 4. Museum Exhibition — Ventura (34.28, -119.29) -->
+      <div class="map-pin" style="top: 59%; left: 42%;" data-project="4">
+        <div class="pin-marker"><svg viewBox="0 0 36 46" xmlns="http://www.w3.org/2000/svg"><path d="M18 46 C18 46 2 28 2 16 C2 7.2 9.2 0 18 0 C26.8 0 34 7.2 34 16 C34 28 18 46 18 46Z" fill="#fff"/><circle cx="18" cy="15" r="10" fill="#0a0a0a"/></svg><span class="pin-label" style="top:10px; color:#fff;">EM</span></div>
+      </div>
+      <!-- 5. 2,500lb Rhino Safe — Thousand Oaks (34.17, -118.84) -->
+      <div class="map-pin" style="top: 73%; left: 67%;" data-project="5">
+        <div class="pin-marker"><svg viewBox="0 0 36 46" xmlns="http://www.w3.org/2000/svg"><path d="M18 46 C18 46 2 28 2 16 C2 7.2 9.2 0 18 0 C26.8 0 34 7.2 34 16 C34 28 18 46 18 46Z" fill="#fff"/><circle cx="18" cy="15" r="10" fill="#0a0a0a"/></svg><span class="pin-label" style="top:10px; color:#fff;">EM</span></div>
+      </div>
+      <!-- 6. Beach Home Estate — Carpinteria (34.40, -119.52) -->
+      <div class="map-pin" style="top: 44%; left: 29%;" data-project="6">
+        <div class="pin-marker"><svg viewBox="0 0 36 46" xmlns="http://www.w3.org/2000/svg"><path d="M18 46 C18 46 2 28 2 16 C2 7.2 9.2 0 18 0 C26.8 0 34 7.2 34 16 C34 28 18 46 18 46Z" fill="#fff"/><circle cx="18" cy="15" r="10" fill="#0a0a0a"/></svg><span class="pin-label" style="top:10px; color:#fff;">EM</span></div>
+      </div>
+      <!-- 7. Designer Living Room — Goleta (34.44, -119.83) -->
+      <div class="map-pin" style="top: 39%; left: 12%;" data-project="7">
+        <div class="pin-marker"><svg viewBox="0 0 36 46" xmlns="http://www.w3.org/2000/svg"><path d="M18 46 C18 46 2 28 2 16 C2 7.2 9.2 0 18 0 C26.8 0 34 7.2 34 16 C34 28 18 46 18 46Z" fill="#fff"/><circle cx="18" cy="15" r="10" fill="#0a0a0a"/></svg><span class="pin-label" style="top:10px; color:#fff;">EM</span></div>
+      </div>
+      <!-- 8. Industrial Equipment — Oxnard (34.20, -119.18) -->
+      <div class="map-pin" style="top: 69%; left: 48%;" data-project="8">
+        <div class="pin-marker"><svg viewBox="0 0 36 46" xmlns="http://www.w3.org/2000/svg"><path d="M18 46 C18 46 2 28 2 16 C2 7.2 9.2 0 18 0 C26.8 0 34 7.2 34 16 C34 28 18 46 18 46Z" fill="#fff"/><circle cx="18" cy="15" r="10" fill="#0a0a0a"/></svg><span class="pin-label" style="top:10px; color:#fff;">EM</span></div>
+      </div>
+      <!-- 9. Billiard Table — Montecito (34.43, -119.60) -->
+      <div class="map-pin" style="top: 40%; left: 25%;" data-project="9">
+        <div class="pin-marker"><svg viewBox="0 0 36 46" xmlns="http://www.w3.org/2000/svg"><path d="M18 46 C18 46 2 28 2 16 C2 7.2 9.2 0 18 0 C26.8 0 34 7.2 34 16 C34 28 18 46 18 46Z" fill="#fff"/><circle cx="18" cy="15" r="10" fill="#0a0a0a"/></svg><span class="pin-label" style="top:10px; color:#fff;">EM</span></div>
+      </div>
+      <!-- 10. Hoist Move — Ventura (34.27, -119.23) -->
+      <div class="map-pin" style="top: 60%; left: 46%;" data-project="10">
+        <div class="pin-marker"><svg viewBox="0 0 36 46" xmlns="http://www.w3.org/2000/svg"><path d="M18 46 C18 46 2 28 2 16 C2 7.2 9.2 0 18 0 C26.8 0 34 7.2 34 16 C34 28 18 46 18 46Z" fill="#fff"/><circle cx="18" cy="15" r="10" fill="#0a0a0a"/></svg><span class="pin-label" style="top:10px; color:#fff;">EM</span></div>
+      </div>
 
       <!-- Header overlay -->
       <div class="map-header">
