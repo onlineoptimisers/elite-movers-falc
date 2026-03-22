@@ -656,36 +656,48 @@
     .process .section-eyebrow { color: #666; }
     .process .section-eyebrow::before { background: #999; }
     .process .section-sub { color: #555; }
-    .process-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; position: relative; }
-    .process-steps::before {
-      content: '';
-      position: absolute;
-      top: 28px;
-      left: 10%;
-      right: 10%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, #ccc, #999, #ccc, transparent);
-    }
-    .process-step { padding: 0 20px 0 0; text-align: left; }
-    .step-num {
-      width: 56px;
-      height: 56px;
-      border: 1px solid #ccc;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-serif);
-      font-size: 20px;
-      color: #555;
-      margin-bottom: 24px;
-      background: var(--off-white);
+    .process-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; position: relative; }
+    .process-step {
+      padding: 32px 24px;
+      text-align: center;
+      background: var(--pure-white);
+      border: 1px solid #e8e8e8;
+      transition: all 0.35s;
       position: relative;
-      z-index: 1;
-      transition: all 0.3s;
     }
-    .process-step:hover .step-num { background: var(--black); color: var(--white); border-color: var(--black); }
-    .process-step h3 { font-size: 14px; font-weight: 600; color: var(--black); margin-bottom: 8px; line-height: 1.3; }
-    .process-step p { font-size: 12px; color: #666; line-height: 1.6; }
+    .process-step:hover {
+      background: var(--black);
+      border-color: var(--black);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    }
+    .process-step:hover .step-num { color: var(--silver); border-color: var(--silver); }
+    .process-step:hover h3 { color: var(--white); }
+    .process-step:hover p { color: var(--grey); }
+    .process-step:hover .step-icon { color: var(--silver); }
+    .step-icon {
+      width: 36px;
+      height: 36px;
+      margin: 0 auto 16px;
+      color: #999;
+      transition: color 0.35s;
+    }
+    .step-icon svg { width: 100%; height: 100%; }
+    .step-num {
+      font-family: var(--font-serif);
+      font-size: 14px;
+      color: #bbb;
+      margin-bottom: 16px;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 12px;
+      transition: all 0.35s;
+    }
+    .process-step h3 { font-size: 15px; font-weight: 600; color: var(--black); margin-bottom: 10px; line-height: 1.3; transition: color 0.35s; }
+    .process-step p { font-size: 13px; color: #666; line-height: 1.65; transition: color 0.35s; }
+    .process-connector {
+      display: none;
+    }
 
     /* ─── SMOOTH IS FAST BANNER ─── */
     .smooth-banner {
@@ -1132,7 +1144,7 @@
     <div class="about-grid">
       <div class="about-img-wrap">
         <div class="about-img">
-          <img src="photos/rudy.jpg" alt="Rudy — Founder, Elite Movers" />
+          <img src="photos/misc1.jpg" alt="Rudy — Founder, Elite Movers — Santa Barbara hilltop" style="object-position: center 30%;" />
         </div>
         <div class="about-badge">
           <div class="about-badge-num">15+</div>
@@ -1199,27 +1211,32 @@
     <p class="section-sub">Clear communication, careful preparation, and a smoother moving day.</p>
     <div class="process-steps">
       <div class="process-step">
-        <div class="step-num">1</div>
+        <div class="step-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M28 13.92v3a1.5 1.5 0 01-1.64 1.5 14.85 14.85 0 01-6.47-2.3 14.6 14.6 0 01-4.5-4.5 14.85 14.85 0 01-2.3-6.5A1.5 1.5 0 0114.58 3.5h3a1.5 1.5 0 011.5 1.29c.1.72.27 1.43.53 2.11a1.5 1.5 0 01-.34 1.58l-1.03 1.03a12 12 0 004.5 4.5l1.03-1.03a1.5 1.5 0 011.58-.34c.68.26 1.39.43 2.11.53A1.5 1.5 0 0128 13.92z"/></svg></div>
+        <div class="step-num">Step 01</div>
         <h3>Call Us for a Fast Quote</h3>
         <p>Get in touch with our team to talk through your move and receive a clear, straightforward quote.</p>
       </div>
       <div class="process-step">
-        <div class="step-num">2</div>
+        <div class="step-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4h16v28H10z"/><path d="M14 10h8"/><path d="M14 14h8"/><path d="M14 18h5"/><path d="M14 24l3 3 5-6"/></svg></div>
+        <div class="step-num">Step 02</div>
         <h3>Get a Hassle-Free Estimate</h3>
         <p>We'll outline the details, answer your questions, and help you understand what to expect.</p>
       </div>
       <div class="process-step">
-        <div class="step-num">3</div>
+        <div class="step-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="24" height="24" rx="2"/><path d="M6 12h24"/><path d="M12 6v6"/><path d="M24 6v6"/><path d="M14 20l3 3 5-6"/></svg></div>
+        <div class="step-num">Step 03</div>
         <h3>Prepare for Moving Day</h3>
         <p>We help you get organized ahead of time so the move itself feels more controlled and less stressful.</p>
       </div>
       <div class="process-step">
-        <div class="step-num">4</div>
+        <div class="step-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 28h22"/><path d="M7 28V14h12v14"/><path d="M19 28V18h6l4 5v5"/><circle cx="11" cy="30" r="2.5"/><circle cx="26" cy="30" r="2.5"/></svg></div>
+        <div class="step-num">Step 04</div>
         <h3>Moving Day</h3>
         <p>Our crew arrives ready to wrap, protect, load, and transport your belongings with care.</p>
       </div>
       <div class="process-step">
-        <div class="step-num">5</div>
+        <div class="step-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18l12-10 12 10"/><path d="M10 16v14h16V16"/><path d="M16 30V22h4v8"/></svg></div>
+        <div class="step-num">Step 05</div>
         <h3>Settle In</h3>
         <p>We unload carefully, place items where they belong, and help make the final stage of the move easier.</p>
       </div>
