@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beverly Hills Estate — Antique & Fine Art Relocation | Elite Movers</title>
+  <meta name="description" content="White-glove antique and fine art relocation from Beverly Hills to Santa Barbara. Custom wrapping, climate-controlled transport by Elite Movers & Packing Services." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --dark: #111111;
+      --dark2: #1a1a1a;
+      --dark3: #222222;
+      --mid: #333333;
+      --grey: #888888;
+      --light-grey: #cccccc;
+      --silver: #b8bec7;
+      --silver-light: #d4d8de;
+      --white: #f8f8f8;
+      --pure-white: #ffffff;
+      --accent: #b8bec7;
+      --font-sans: 'Inter', sans-serif;
+      --font-serif: 'Playfair Display', serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ─── TOPBAR ─── */
+    .topbar {
+      background: var(--dark2);
+      border-bottom: 1px solid var(--dark3);
+      padding: 9px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--silver);
+      letter-spacing: 0.03em;
+    }
+    .topbar a { color: var(--silver); transition: color 0.2s; }
+    .topbar a:hover { color: var(--white); }
+    .topbar-left { display: flex; gap: 28px; align-items: center; }
+    .topbar-right { display: flex; gap: 24px; align-items: center; }
+    .topbar-sep { color: var(--mid); }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,10,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--dark3);
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 68px;
+    }
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--white);
+      letter-spacing: 0.02em;
+    }
+    .nav-logo span { color: var(--silver); }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      list-style: none;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .nav-links a {
+      color: var(--light-grey);
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--silver);
+      transition: width 0.3s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta {
+      background: var(--white);
+      color: var(--black) !important;
+      padding: 10px 22px;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: background 0.2s, color 0.2s !important;
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--silver) !important; color: var(--black) !important; }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      height: 70vh;
+      min-height: 480px;
+      display: flex;
+      align-items: flex-end;
+      padding: 60px 80px;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('photos/antique-table.jpg') center center / cover no-repeat;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.5) 40%, rgba(10,10,10,0.25) 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(184,190,199,0.12);
+      border: 1px solid rgba(184,190,199,0.2);
+      padding: 6px 14px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 16px;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(184,190,199,0.08);
+      border: 1px solid rgba(184,190,199,0.15);
+      padding: 5px 12px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--silver-light);
+      margin-left: 10px;
+    }
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: 46px;
+      font-weight: 500;
+      color: var(--pure-white);
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .hero p {
+      font-size: 16px;
+      color: var(--light-grey);
+      font-weight: 300;
+      line-height: 1.7;
+      max-width: 560px;
+    }
+
+    /* ─── SECTION COMMON ─── */
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--silver);
+    }
+
+    /* ─── PROJECT OVERVIEW ─── */
+    .project-overview {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 64px;
+      padding: 80px 80px;
+      background: var(--black);
+    }
+    .project-narrative h2 {
+      font-family: var(--font-serif);
+      font-size: 30px;
+      font-weight: 500;
+      color: var(--pure-white);
+      margin-bottom: 24px;
+      line-height: 1.25;
+    }
+    .project-narrative p {
+      font-size: 15px;
+      color: var(--light-grey);
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    /* ─── DETAILS CARD ─── */
+    .details-card {
+      background: var(--dark2);
+      border: 1px solid var(--dark3);
+      padding: 32px;
+      height: fit-content;
+      position: sticky;
+      top: 100px;
+    }
+    .details-card h3 {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--pure-white);
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--dark3);
+    }
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(34,34,34,0.6);
+    }
+    .detail-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--grey);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .detail-value {
+      font-size: 14px;
+      color: var(--pure-white);
+      font-weight: 500;
+      text-align: right;
+    }
+
+    /* ─── GALLERY STRIP ─── */
+    .gallery-strip {
+      background: var(--dark);
+      padding: 64px 80px;
+    }
+    .gallery-strip h2 {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      font-weight: 500;
+      color: var(--pure-white);
+      margin-bottom: 32px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .gallery-item {
+      overflow: hidden;
+      border: 1px solid var(--dark3);
+      aspect-ratio: 4/3;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+      transition: opacity 0.4s, transform 0.5s;
+    }
+    .gallery-item:hover img {
+      opacity: 1;
+      transform: scale(1.06);
+    }
+
+    /* ─── CHALLENGE / RESULT ─── */
+    .section-dark {
+      background: var(--black);
+      padding: 80px 80px;
+    }
+    .section-light {
+      background: var(--dark2);
+      padding: 80px 80px;
+    }
+    .section-dark h2,
+    .section-light h2 {
+      font-family: var(--font-serif);
+      font-size: 30px;
+      font-weight: 500;
+      color: var(--pure-white);
+      margin-bottom: 24px;
+      line-height: 1.25;
+    }
+    .section-dark p,
+    .section-light p {
+      font-size: 15px;
+      color: var(--light-grey);
+      line-height: 1.8;
+      max-width: 720px;
+      margin-bottom: 16px;
+    }
+
+    /* ─── TESTIMONIAL ─── */
+    .testimonial {
+      margin-top: 40px;
+      padding: 32px;
+      border-left: 3px solid var(--silver);
+      background: rgba(184,190,199,0.04);
+    }
+    .testimonial blockquote {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--pure-white);
+      line-height: 1.5;
+      font-style: italic;
+      margin-bottom: 16px;
+    }
+    .testimonial cite {
+      font-size: 13px;
+      color: var(--grey);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    /* ─── CTA SECTION ─── */
+    .cta-section {
+      background: var(--dark);
+      padding: 80px 80px;
+      text-align: center;
+      border-top: 1px solid var(--dark3);
+      border-bottom: 1px solid var(--dark3);
+    }
+    .cta-section h2 {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      font-weight: 500;
+      color: var(--pure-white);
+      margin-bottom: 12px;
+    }
+    .cta-section p {
+      font-size: 15px;
+      color: var(--grey);
+      margin-bottom: 32px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--pure-white);
+      color: var(--black);
+      padding: 16px 32px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: all 0.25s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--silver-light); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+
+    /* ─── MORE PROJECTS ─── */
+    .more-projects {
+      background: var(--black);
+      padding: 80px 80px;
+    }
+    .more-projects h2 {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      font-weight: 500;
+      color: var(--pure-white);
+      margin-bottom: 32px;
+    }
+    .more-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .more-card {
+      background: var(--dark2);
+      border: 1px solid var(--dark3);
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .more-card:hover { border-color: var(--silver); transform: translateY(-3px); }
+    .more-card-img {
+      height: 200px;
+      overflow: hidden;
+    }
+    .more-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+      transition: opacity 0.4s, transform 0.5s;
+    }
+    .more-card:hover .more-card-img img { opacity: 1; transform: scale(1.04); }
+    .more-card-body {
+      padding: 24px;
+    }
+    .more-card-type {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 6px;
+    }
+    .more-card-title {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--pure-white);
+      margin-bottom: 4px;
+    }
+    .more-card-loc {
+      font-size: 12px;
+      color: var(--grey);
+    }
+
+    /* ─── BACK LINK ─── */
+    .back-link {
+      display: flex;
+      justify-content: center;
+      padding: 40px 80px;
+      background: var(--black);
+    }
+    .back-link a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--silver);
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .back-link a:hover { color: var(--pure-white); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark2);
+      border-top: 1px solid var(--dark3);
+      padding: 56px 80px 32px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand h4 {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--pure-white);
+      margin-bottom: 12px;
+    }
+    .footer-brand p { font-size: 13px; color: var(--grey); line-height: 1.65; max-width: 280px; }
+    .footer-col h5 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul a { font-size: 13px; color: var(--grey); transition: color 0.2s; }
+    .footer-col ul a:hover { color: var(--white); }
+    .footer-contact { font-size: 13px; color: var(--grey); line-height: 1.9; }
+    .footer-contact a { color: var(--grey); transition: color 0.2s; }
+    .footer-contact a:hover { color: var(--white); }
+    .footer-phone {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      color: var(--pure-white);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .footer-bottom {
+      border-top: 1px solid var(--dark3);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--grey);
+      letter-spacing: 0.03em;
+    }
+
+    /* ─── SCROLL ANIMATION ─── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1100px) {
+      .hero { padding: 48px 40px; }
+      .project-overview { grid-template-columns: 1fr; gap: 40px; padding: 60px 40px; }
+      .details-card { position: static; }
+      .gallery-strip { padding: 48px 40px; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .section-dark, .section-light { padding: 60px 40px; }
+      .cta-section { padding: 60px 40px; }
+      .more-projects { padding: 60px 40px; }
+      .back-link { padding: 32px 40px; }
+      footer { padding: 48px 40px 28px; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 680px) {
+      .topbar { display: none; }
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { height: 55vh; min-height: 380px; padding: 36px 24px; }
+      .hero h1 { font-size: 32px; }
+      .project-overview { padding: 48px 24px; }
+      .gallery-strip { padding: 40px 24px; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .section-dark, .section-light { padding: 48px 24px; }
+      .cta-section { padding: 48px 24px; }
+      .more-projects { padding: 48px 24px; }
+      .more-grid { grid-template-columns: 1fr; }
+      .back-link { padding: 28px 24px; }
+      footer { padding: 40px 24px 24px; }
+      .footer-top { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <span>Serving Ventura, Santa Barbara & Greater Los Angeles</span>
+    </div>
+    <div class="topbar-right">
+      <a href="tel:+18056976220">Call (805) 697-6220</a>
+      <span class="topbar-sep">|</span>
+      <a href="mailto:elitemoversca@gmail.com">elitemoversca@gmail.com</a>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Elite <span>Movers</span></a>
+    <ul class="nav-links">
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About Elite</a></li>
+      <li><a href="projects.html">Previous Work</a></li>
+      <li><a href="locations.html">Locations</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="tel:+18056976220" class="nav-cta">Call Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div>
+        <span class="hero-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Beverly Hills, CA to Santa Barbara, CA
+        </span>
+        <span class="hero-tag">White-Glove / Specialty</span>
+      </div>
+      <h1>Beverly Hills Estate — Antique & Fine Art Relocation</h1>
+      <p>Relocating irreplaceable antiques and fine art from a Beverly Hills estate to a new home in Santa Barbara, with white-glove care at every step.</p>
+    </div>
+  </section>
+
+  <!-- PROJECT OVERVIEW -->
+  <div class="project-overview fade-in">
+    <div class="project-narrative">
+      <div class="section-eyebrow">Project Overview</div>
+      <h2>When Every Piece Is Irreplaceable</h2>
+      <p>A longtime Beverly Hills collector needed to relocate a lifetime of antique furniture, fine art, and a centerpiece 12-seater antique dining table to their new Santa Barbara residence. With pieces dating back to the 18th century and a combined collection value in the hundreds of thousands, this was not a standard move — it was a preservation operation.</p>
+      <p>Elite Movers assigned a dedicated white-glove crew of six specialists. Every piece was individually assessed, photographed, and given a custom wrapping plan. The antique table was disassembled by hand — no power tools — with each leg, leaf, and joinery point padded in acid-free tissue and triple-wrapped in moving blankets. Framed artwork received corner protectors, glassine barriers, and custom-fitted mirror boxes.</p>
+      <p>Floor runners were laid throughout both the Beverly Hills estate and the Santa Barbara destination to prevent any contact between equipment and the original hardwood and marble floors. The entire operation was completed over two days with climate-controlled transport between locations.</p>
+    </div>
+    <div class="details-card">
+      <h3>Move Details</h3>
+      <div class="detail-row">
+        <span class="detail-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Date
+        </span>
+        <span class="detail-value">January 2025</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Crew Size
+        </span>
+        <span class="detail-value">6 Specialists</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          Trucks
+        </span>
+        <span class="detail-value">1 Climate-Controlled</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Duration
+        </span>
+        <span class="detail-value">2 Days</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Distance
+        </span>
+        <span class="detail-value">95 miles</span>
+      </div>
+      <div class="detail-row" style="border-bottom: none;">
+        <span class="detail-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          Special Items
+        </span>
+        <span class="detail-value">Antiques, Fine Art</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- GALLERY STRIP -->
+  <div class="gallery-strip fade-in">
+    <div class="section-eyebrow">Gallery</div>
+    <h2>From the Move</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="photos/antique-table.jpg" alt="12-seater antique dining table being prepared" />
+      </div>
+      <div class="gallery-item">
+        <img src="photos/antique-table-2.jpg" alt="Antique table custom-wrapped for transport" />
+      </div>
+      <div class="gallery-item">
+        <img src="photos/floor-protection.jpg" alt="Floor runners protecting hardwood floors" />
+      </div>
+      <div class="gallery-item">
+        <img src="photos/estate-bezos.jpg" alt="Beverly Hills estate interior" />
+      </div>
+    </div>
+  </div>
+
+  <!-- THE CHALLENGE -->
+  <section class="section-dark fade-in">
+    <div class="section-eyebrow">The Challenge</div>
+    <h2>Centuries of History on the Line</h2>
+    <p>The 12-seater antique dining table was the single most challenging piece. It weighed over 400 pounds, featured hand-carved legs with delicate scrollwork, and could not be tilted beyond 15 degrees without risking joint separation. It had to navigate through a doorway with less than two inches of clearance on either side.</p>
+    <p>Several of the oil paintings required specific humidity and temperature conditions during transport. The client also required a detailed photographic inventory of every item before and after the move, with condition notes for insurance purposes. Nothing could be rushed — and nothing could be replaced.</p>
+  </section>
+
+  <!-- THE RESULT -->
+  <section class="section-light fade-in">
+    <div class="section-eyebrow">The Result</div>
+    <h2>Not a Scratch, Not a Worry</h2>
+    <p>Every item arrived at the Santa Barbara residence in the exact condition it left Beverly Hills. The antique table was reassembled in the new dining room without a single mark on the original finish. All artwork was hung according to the client's layout plan, and the photographic inventory confirmed zero damage across the entire collection.</p>
+    <p>Floor protection was removed and both properties were left spotless. The client's insurer confirmed the move met museum-grade handling standards.</p>
+    <div class="testimonial">
+      <blockquote>"I've moved these pieces three times over 30 years, and this was the first time I wasn't anxious the entire day. Their crew handled my grandmother's table like it was their own family heirloom. Truly exceptional — I won't use anyone else."</blockquote>
+      <cite>— Patricia W., Santa Barbara, CA</cite>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section fade-in">
+    <div class="section-eyebrow">Get Started</div>
+    <h2>Planning a Similar Move?</h2>
+    <p>From antique furniture to fine art collections, Elite Movers provides the white-glove care your valuables deserve.</p>
+    <a href="tel:+18056976220" class="btn-primary">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call (805) 697-6220
+    </a>
+  </section>
+
+  <!-- MORE PROJECTS -->
+  <section class="more-projects fade-in">
+    <div class="section-eyebrow">More Projects</div>
+    <h2>Explore More Work</h2>
+    <div class="more-grid">
+      <a href="project-local-move.html" class="more-card">
+        <div class="more-card-img">
+          <img src="photos/furniture-wrap.jpg" alt="Ventura Family Home — Full-Service Local Move" />
+        </div>
+        <div class="more-card-body">
+          <div class="more-card-type">Local Residential</div>
+          <div class="more-card-title">Ventura Family Home — Full-Service Local Move</div>
+          <div class="more-card-loc">Ventura, CA</div>
+        </div>
+      </a>
+      <a href="project-mansion-longdistance.html" class="more-card">
+        <div class="more-card-img">
+          <img src="photos/montecito-mansion.jpg" alt="Montecito Mansion — Cross-State Estate Relocation" />
+        </div>
+        <div class="more-card-body">
+          <div class="more-card-type">Long-Distance / Estate</div>
+          <div class="more-card-title">Montecito Mansion — Cross-State Relocation</div>
+          <div class="more-card-loc">Montecito, CA to Scottsdale, AZ</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- BACK LINK -->
+  <div class="back-link">
+    <a href="projects.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Back to All Projects
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h4>Elite Movers & Packing Services LLC</h4>
+        <p>Providing quality moving services throughout Ventura and surrounding areas since 2010. Licensed, insured, and built on reputation.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="service-local.html">Local Moving</a></li>
+          <li><a href="service-longdistance.html">Long Distance</a></li>
+          <li><a href="services.html#packing">Packing Services</a></li>
+          <li><a href="services.html#commercial">Commercial Moving</a></li>
+          <li><a href="services.html#specialty">Specialty Moving</a></li>
+          <li><a href="services.html#storage">Storage</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Elite</a></li>
+          <li><a href="fleet.html">Elite Fleet</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="projects.html">Previous Work</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <div class="footer-contact">
+          <a href="tel:+18056976220" class="footer-phone">(805) 697-6220</a>
+          1845 Huron Dr<br>
+          Ventura, CA 93004<br><br>
+          <a href="mailto:elitemoversca@gmail.com">elitemoversca@gmail.com</a><br><br>
+          Mon-Sat: 7am - 9pm<br>
+          Sun: 9am - 8pm
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 Elite Movers & Packing Services LLC. All rights reserved.</span>
+      <span>Licensed & Insured &middot; Ventura, CA</span>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(el => {
+        if (el.isIntersecting) { el.target.classList.add('visible'); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
