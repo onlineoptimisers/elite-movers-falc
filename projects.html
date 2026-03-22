@@ -145,7 +145,6 @@
       width: 100%;
       height: 100%;
       border: none;
-      filter: saturate(0.15) brightness(0.35) contrast(1.4);
       pointer-events: none;
     }
     .map-panel:hover .map-bg iframe {
@@ -541,35 +540,20 @@
         <div class="pin-marker"><svg viewBox="0 0 36 46" xmlns="http://www.w3.org/2000/svg"><path d="M18 46 C18 46 2 28 2 16 C2 7.2 9.2 0 18 0 C26.8 0 34 7.2 34 16 C34 28 18 46 18 46Z" fill="#fff"/><circle cx="18" cy="15" r="10" fill="#0a0a0a"/></svg><span class="pin-label" style="top:10px; color:#fff;">EM</span></div>
       </div>
 
-      <!-- Header overlay -->
-      <div class="map-header">
-        <div class="section-eyebrow">Project Map</div>
-        <h1>Our Work Across<br>the Coast</h1>
-        <p>10 featured projects from Ventura County to Los Angeles — estate moves, specialty handling, and everything in between.</p>
-      </div>
-
-      <!-- Stats -->
-      <div class="map-stats">
-        <div class="map-stat">
-          <div class="map-stat-num">3,500+</div>
-          <div class="map-stat-label">Moves Completed</div>
-        </div>
-        <div class="map-stat">
-          <div class="map-stat-num">3</div>
-          <div class="map-stat-label">Counties Served</div>
-        </div>
-        <div class="map-stat">
-          <div class="map-stat-num">15+</div>
-          <div class="map-stat-label">Years Operating</div>
-        </div>
-      </div>
+      <!-- Clean map — no overlays -->
     </div>
 
     <!-- PROJECTS PANEL -->
     <div class="projects-panel">
       <div class="projects-header">
-        <h2>Featured Projects <span class="projects-count">10</span></h2>
-        <p>Select a project to view details</p>
+        <div class="section-eyebrow" style="margin-bottom:8px;">Previous Work</div>
+        <h2>Our Work Across the Coast</h2>
+        <p>10 featured projects — estate moves, specialty handling, and everything in between.</p>
+        <div style="display:flex; gap:24px; margin-top:16px; padding-bottom:4px; border-bottom:1px solid var(--dark3);">
+          <div><span style="font-family:var(--font-serif); font-size:20px; color:var(--pure-white);">3,500+</span> <span style="font-size:11px; color:var(--grey); letter-spacing:0.05em;">MOVES</span></div>
+          <div><span style="font-family:var(--font-serif); font-size:20px; color:var(--pure-white);">3</span> <span style="font-size:11px; color:var(--grey); letter-spacing:0.05em;">COUNTIES</span></div>
+          <div><span style="font-family:var(--font-serif); font-size:20px; color:var(--pure-white);">15+</span> <span style="font-size:11px; color:var(--grey); letter-spacing:0.05em;">YEARS</span></div>
+        </div>
       </div>
 
       <!-- 1 -->
